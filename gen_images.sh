@@ -21,8 +21,8 @@ virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env
 
 pip install -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
-python gen_images.py --outdir=out --trunc=1.0 --seeds=10-15 \
+python gen_images.py --outdir=/scratch/suyuelyu/proteinGAN/projected_gan/image_out --trunc=1.0 --seeds=10-15 \
   --network=/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/2020-01-11-skylion-stylegan2-animeportraits-networksnapshot-024664.pkl
 
-python gen_images.py --outdir=out --trunc=1.0 --seeds=10-15 \
+python gen_images.py --outdir=/scratch/suyuelyu/proteinGAN/projected_gan/image_out --trunc=1.0 --seeds=10-15 \
   --network=/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/2020-01-11-skylion-stylegan2-animeportraits-networksnapshot-024664.pkl
