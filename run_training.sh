@@ -26,13 +26,13 @@ DATA_DIR=/home/suyuelyu/scratch/proteinGAN/image-data
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/image_out
 
-python ${REPO_DIR}/train.py 
-    --outdir=${OUTPUT_DIR}
-    --cfg=fastgan_lite
-    --data=${DATA_DIR}/few-shot-image-datasets.zip
-    --gpus=2 
-    --batch=2 
-    --mirror=1 
-    --snap=50 
-    --batch-gpu=2
-    --kimg=10000
+python ${REPO_DIR}/train.py \
+    --outdir=${OUTPUT_DIR} \
+    --cfg=fastgan_lite \
+    --data=${DATA_DIR}/few-shot-image-datasets.zip \
+    --gpus=2 \
+    --batch=2 \
+    --mirror=1 \
+    --snap=50 \
+    --batch-gpu=2 \
+    --kimg=10000 \
