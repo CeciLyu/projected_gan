@@ -31,7 +31,7 @@ python ${REPO_DIR}/train.py \
     --cfg=fastgan_lite \
     --data=${DATA_DIR}/few-shot-image-datasets.zip \
     --gpus=2 \
-    --batch=2 \
+    --batch=4 \
     --mirror=1 \
     --snap=50 \
     --batch-gpu=2 \
