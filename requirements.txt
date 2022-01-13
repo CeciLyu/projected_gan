@@ -14,7 +14,7 @@ cffi==1.14.6+computecanada
 chardet==4.0.0+computecanada
 charset-normalizer==2.0.2+computecanada
 click==8.0.0+computecanada
-cocos2d==0.6.9
+../../../../../home/suyuelyu/.cache/pip/wheels/2d/8a/d5/ce0697ee0fb73a9f62b4c1c45a8cfced607e80d3a6bc14b93e/cocos2d-0.6.9-py3-none-any.whl
 cryptography==3.4.7+computecanada
 cycler==0.10.0+computecanada
 Cython==0.29.24+computecanada
