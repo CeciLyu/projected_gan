@@ -4,7 +4,7 @@
 #SBATCH --time=00:15:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:a100:2           # You need to request one GPU to be able to run AlphaFold properly
+#SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
 #SBATCH --cpus-per-task=4      # adjust this if you are using parallel commands
 #SBATCH --mem=32G              # adjust this according to the memory requirement per node you need
 #SBATCH --mail-user=cecilianlv@icloud.com # adjust this to match your email address
