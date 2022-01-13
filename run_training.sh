@@ -14,7 +14,6 @@
 
 cd $SCRATCH 
 
-export CUDA_LAUNCH_BLOCKING=1
 
 # Load your modules as before
 module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8 
@@ -33,8 +32,8 @@ python ${REPO_DIR}/train.py \
     --outdir=${OUTPUT_DIR} \
     --cfg=fastgan_lite \
     --data=${DATA_DIR}/few-shot-image-datasets.zip \
-    --gpus=2 \
-    --batch=4 \
+    --gpus=1 \
+    --batch=2 \
     --mirror=1 \
     --snap=50 \
     --batch-gpu=2 \
