@@ -60,7 +60,11 @@ def _make_projector(im_res, cout, proj_type, expand=False):
     assert proj_type in [0, 1, 2], "Invalid projection type"
 
     ### Build pretrained feature network
-    model = timm.create_model('tf_efficientnet_lite0', pretrained=True)
+    # CC computing node does not have internet access,
+    # predownloaded model needed to /scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl
+    # model = timm.create_model('tf_efficientnet_lite0', pretrained=True)
+    with open('/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/tf_efficientnet_lite0.pkl', "rb") as file:
+        model = torch.load(file)
     pretrained = _make_efficientnet(model)
 
     # determine resolution of feature maps, this is later used to calculate the number
