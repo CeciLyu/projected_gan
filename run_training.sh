@@ -4,7 +4,7 @@
 #SBATCH --time=00:15:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
+#SBATCH --gres=gpu:a100:2           # You need to request one GPU to be able to run AlphaFold properly
 #SBATCH --cpus-per-task=4      # adjust this if you are using parallel commands
 #SBATCH --mem=32G              # adjust this according to the memory requirement per node you need
 #SBATCH --mail-user=cecilianlv@icloud.com # adjust this to match your email address
@@ -22,18 +22,17 @@ module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8
 
 pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
-DATA_DIR=$SCRATCH/GFL/AF/data/input     # Set the appropriate path to your supporting data
-REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan # Set the appropriate path to AlphaFold's cloned repo
-#DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
+DATA_DIR=/home/suyuelyu/scratch/proteinGAN/image-data     
+REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/image_out
 
-# predownloaded and converted stylegan2-cat-config-f with legacy.py
-# python /scratch/suyuelyu/proteinGAN/projected_gan/legacy.py 
-#     --source=https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/stylegan2-cat-config-f.pkl 
-#     --dest=/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/stylegan2-cat-config-f.pkl
-
-python ${REPO_DIR}/gen_images.py --outdir=${OUTPUT_DIR} --trunc=1.0 --seeds=10-15 \
-  --network=${REPO_DIR}/leg_pkl/stylegan2-cat-config-f.pkl
-
-python ${REPO_DIR}/gen_images.py --outdir=${OUTPUT_DIR} --trunc=1.0 --seeds=10-15 \
-  --network=${REPO_DIR}/leg_pkl/stylegan2-cat-config-f.pkl  
+python ${REPO_DIR}/train.py 
+    --outdir=${OUTPUT_DIR}
+    --cfg=fastgan_lite
+    --data=${DATA_DIR}/few-shot-image-datasets.zip
+    --gpus=2 
+    --batch=2 
+    --mirror=1 
+    --snap=50 
+    --batch-gpu=2
+    --kimg=10000
