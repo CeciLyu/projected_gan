@@ -25,11 +25,16 @@ pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirement
 
 DATA_DIR=$SCRATCH/GFL/AF/data/input     # Set the appropriate path to your supporting data
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan # Set the appropriate path to AlphaFold's cloned repo
-DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
+#DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/image_out
 
-python ${REPO_DIR}/gen_images.py --outdir=${OUTPUT_DIR} --trunc=1.0 --seeds=10-15 \
-  --network=${REPO_DIR}/leg_pkl/2020-01-11-skylion-stylegan2-animeportraits-networksnapshot-024664.pkl
+# predownloaded and converted stylegan2-cat-config-f with legacy.py
+# python /scratch/suyuelyu/proteinGAN/projected_gan/legacy.py 
+#     --source=https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/stylegan2-cat-config-f.pkl 
+#     --dest=/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/stylegan2-cat-config-f.pkl
 
 python ${REPO_DIR}/gen_images.py --outdir=${OUTPUT_DIR} --trunc=1.0 --seeds=10-15 \
-  --network=${REPO_DIR}/leg_pkl/2020-01-11-skylion-stylegan2-animeportraits-networksnapshot-024664.pkl
+  --network=${REPO_DIR}/leg_pkl/stylegan2-cat-config-f.pkl
+
+python ${REPO_DIR}/gen_images.py --outdir=${OUTPUT_DIR} --trunc=1.0 --seeds=10-15 \
+  --network=${REPO_DIR}/leg_pkl/stylegan2-cat-config-f.pkl  
