@@ -18,7 +18,8 @@ cd $SCRATCH
 module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8 
 
 # Generate your virtual environment in $SLURM_TMPDIR
-virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
+ virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
+# source proteinGAN_ENV/bin/active
 
 pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
