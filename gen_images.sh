@@ -23,7 +23,7 @@ virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env
 pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
 DATA_DIR=$SCRATCH/GFL/AF/data/input     # Set the appropriate path to your supporting data
-REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/ # Set the appropriate path to AlphaFold's cloned repo
+REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan # Set the appropriate path to AlphaFold's cloned repo
 DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/image_out
 
