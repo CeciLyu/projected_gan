@@ -19,7 +19,7 @@ module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8
 # Generate your virtual environment in $SLURM_TMPDIR
 virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
 
-pip install -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
+pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
 python gen_images.py --outdir=/scratch/suyuelyu/proteinGAN/projected_gan/image_out --trunc=1.0 --seeds=10-15 \
   --network=/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/2020-01-11-skylion-stylegan2-animeportraits-networksnapshot-024664.pkl
