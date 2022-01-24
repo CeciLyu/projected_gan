@@ -14,9 +14,10 @@
 
 cd $SCRATCH 
 
+#export CUDA_LAUNCH_BLOCKING=1
 
 # Load your modules as before
-module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8 
+module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.9.6
 
 # Generate your virtual environment in $SLURM_TMPDIR
  virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
