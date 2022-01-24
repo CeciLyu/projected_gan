@@ -25,14 +25,17 @@ module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 openmm python/3.8
 
 pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt
 
-DATA_DIR=/home/suyuelyu/scratch/proteinGAN/image-data     
+# unzipped the downloaded few-shot.zip and procced pokemon
+# python dataset_tool.py --source=/scratch/suyuelyu/proteinGAN/image-data/few-shot-images/pokemon \
+# --dest=/scratch/suyuelyu/proteinGAN/image-data/processed_few_shot_pokemon.zip --resolution=256x256 --transform=center-crop
+DATA_DIR=/home/suyuelyu/scratch/proteinGAN/image-data
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/projected_gan/image_out
 
 python ${REPO_DIR}/train.py \
     --outdir=${OUTPUT_DIR} \
     --cfg=fastgan_lite \
-    --data=${DATA_DIR}/few-shot-image-datasets.zip \
+    --data=${DATA_DIR}/processed_few_shot_pokemon.zip \
     --gpus=1 \
     --batch=2 \
     --mirror=1 \
