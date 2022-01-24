@@ -1,0 +1,666 @@
+
+Lmod is automatically replacing "intel/2020.1.217" with "gcc/9.3.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) blis/0.8.1     2) flexiblas/3.0.4     3) openmpi/4.0.3
+
+created virtual environment CPython3.8.10.final.0-64 in 654ms
+  creator CPython3Posix(dest=/localscratch/suyuelyu.1925564.0/my_env, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/suyuelyu/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+Ignoring pip: markers 'python_version < "3"' don't match your environment
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/arff-0.9+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/argon2_cffi-20.1.0+computecanada-cp38-abi3-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/async_generator-1.10+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/attrs-21.2.0+computecanada-py2.py3-none-any.whl
+Requirement already satisfied: backcall==0.2.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 5)) (0.2.0)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/backports_abc-0.5+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/backports.shutil_get_terminal_size-1.0.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/bcrypt-3.2.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/bitstring-3.1.7+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/bleach-3.3.1+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/blist-1.3.6+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/certifi-2021.5.30+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/cffi-1.14.6+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/chardet-4.0.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/charset_normalizer-2.0.2+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/click-8.0.0+computecanada-py3-none-any.whl
+Processing /home/suyuelyu/.cache/pip/wheels/2d/8a/d5/ce0697ee0fb73a9f62b4c1c45a8cfced607e80d3a6bc14b93e/cocos2d-0.6.9-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/cryptography-3.4.7+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/cycler-0.10.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/Cython-0.29.24+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/deap-1.3.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/debugpy-1.3.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/decorator-5.0.9+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/defusedxml-0.7.1+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/dill-0.3.2+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/dnspython-2.1.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ecdsa-0.17.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/entrypoints-0.3+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/funcsigs-1.0.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/glfw-1.12.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/idna-3.2+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/imageio-2.9.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/imageio_ffmpeg-0.4.2+computecanada-py3-none-any.whl
+Processing /home/suyuelyu/.cache/pip/wheels/e3/6d/7d/85e76bf0d5fa6f50258fea4856c130bebc24ba4ea690489fa5/imgui-1.4.1-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/importlib_metadata-3.10.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ipykernel-6.0.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ipython-7.25.0+computecanada-py3-none-any.whl
+Requirement already satisfied: ipython-genutils==0.2.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 38)) (0.2.0)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ipywidgets-7.6.3+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jedi-0.18.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/Jinja2-3.0.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/jsonschema-3.2.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jupyter_client-6.1.12+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jupyter_core-4.7.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jupyterlab_pygments-0.1.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jupyterlab_widgets-1.0.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/kiwisolver-1.3.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/lockfile-0.12.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/MarkupSafe-2.0.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/matplotlib-3.4.2+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/matplotlib_inline-0.1.2+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/mistune-0.8.4+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/mock-4.0.3+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/mpmath-1.2.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/nbclient-0.5.3+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/nbconvert-6.1.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/nbformat-5.1.3+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/nest_asyncio-1.5.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/netaddr-0.8.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/netifaces-0.11.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ninja-1.10.0.post2+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/nose-1.3.7+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/notebook-6.4.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/numpy-1.21.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/packaging-21.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/pandas-1.3.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pandocfilters-1.4.3+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/paramiko-2.7.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/parso-0.8.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/path-16.0.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/path.py-12.5.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pathlib2-2.3.6+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/paycheck-1.0.2+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pbr-5.6.0+computecanada-py2.py3-none-any.whl
+Requirement already satisfied: pexpect==4.8.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 75)) (4.8.0)
+Requirement already satisfied: pickleshare==0.7.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 76)) (0.7.5)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/Pillow-8.3.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/Pillow_SIMD-7.0.0.post3+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/prometheus_client-0.11.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/prompt_toolkit-3.0.19+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/psutil-5.8.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ptyprocess-0.7.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/pycparser-2.20+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/pygame-2.0.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pyglet-1.5.21+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/Pygments-2.9.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/PyNaCl-1.4.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/PyOpenGL-3.1.5+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pyparsing-2.4.7+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pyrsistent-0.18.0+computecanada-cp38-cp38-linux_x86_64.whl
+Requirement already satisfied: python-dateutil==2.8.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 92)) (2.8.1)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pytz-2021.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pyzmq-22.1.0+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/requests-2.26.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/scipy-1.7.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/Send2Trash-1.7.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/simplegeneric-0.8.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/singledispatch-3.6.2+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/six-1.16.0+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/sympy-1.8+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/terminado-0.10.1+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/testpath-0.5.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/timm-0.4.12+computecanada-py3-none-any.whl
+Processing /home/suyuelyu/bin/torch-1.8.1+cu111-cp38-cp38-linux_x86_64.whl
+Processing /home/suyuelyu/bin/torchvision-0.9.1+cu111-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tornado-6.1+computecanada-cp38-cp38-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tqdm-4.62.3+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/traitlets-5.0.5+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/typing_extensions-3.10.0.0+computecanada-py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/urllib3-1.26.6+computecanada-py2.py3-none-any.whl
+Requirement already satisfied: wcwidth==0.2.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages (from -r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 112)) (0.2.5)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/webencodings-0.5.1+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/widgetsnbextension-3.5.1+computecanada-py2.py3-none-any.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/zipp-3.5.0+computecanada-py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in /localscratch/suyuelyu.1925564.0/my_env/lib/python3.8/site-packages (from ipython==7.25.0->-r /scratch/suyuelyu/proteinGAN/projected_gan/requirements.txt (line 37)) (46.1.3)
+Installing collected packages: arff, six, pycparser, cffi, argon2-cffi, async-generator, attrs, backports-abc, backports.shutil-get-terminal-size, bcrypt, bitstring, pyparsing, packaging, webencodings, bleach, blist, certifi, chardet, charset-normalizer, click, pyglet, cocos2d, cryptography, cycler, Cython, numpy, deap, debugpy, decorator, defusedxml, dill, dnspython, ecdsa, entrypoints, funcsigs, glfw, idna, Pillow, imageio, imageio-ffmpeg, imgui, zipp, importlib-metadata, tornado, traitlets, prompt-toolkit, Pygments, matplotlib-inline, parso, jedi, ipython, pyzmq, jupyter-core, jupyter-client, ipykernel, pyrsistent, jsonschema, nbformat, testpath, MarkupSafe, Jinja2, mistune, nest-asyncio, nbclient, pandocfilters, jupyterlab-pygments, nbconvert, prometheus-client, Send2Trash, ptyprocess, terminado, notebook, widgetsnbextension, jupyterlab-widgets, ipywidgets, kiwisolver, lockfile, matplotlib, mock, mpmath, netaddr, netifaces, ninja, nose, pytz, pandas, PyNaCl, paramiko, path, path.py, pathlib2, paycheck, pbr, Pillow-SIMD, psutil, pygame, PyOpenGL, urllib3, requests, scipy, simplegeneric, singledispatch, sympy, typing-extensions, torch, torchvision, timm, tqdm
+  Attempting uninstall: arff
+    Found existing installation: arff 0.9
+    Not uninstalling arff at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'arff'. No files were found to uninstall.
+  Attempting uninstall: six
+    Found existing installation: six 1.15.0
+    Not uninstalling six at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'six'. No files were found to uninstall.
+  Attempting uninstall: pycparser
+    Found existing installation: pycparser 2.20
+    Not uninstalling pycparser at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pycparser'. No files were found to uninstall.
+  Attempting uninstall: cffi
+    Found existing installation: cffi 1.14.3
+    Not uninstalling cffi at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'cffi'. No files were found to uninstall.
+  Attempting uninstall: argon2-cffi
+    Found existing installation: argon2-cffi 20.1.0
+    Not uninstalling argon2-cffi at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'argon2-cffi'. No files were found to uninstall.
+  Attempting uninstall: async-generator
+    Found existing installation: async-generator 1.10
+    Not uninstalling async-generator at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'async-generator'. No files were found to uninstall.
+  Attempting uninstall: attrs
+    Found existing installation: attrs 20.2.0
+    Not uninstalling attrs at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'attrs'. No files were found to uninstall.
+  Attempting uninstall: backports-abc
+    Found existing installation: backports-abc 0.5
+    Not uninstalling backports-abc at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'backports-abc'. No files were found to uninstall.
+  Attempting uninstall: backports.shutil-get-terminal-size
+    Found existing installation: backports.shutil-get-terminal-size 1.0.0
+    Not uninstalling backports.shutil-get-terminal-size at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'backports.shutil-get-terminal-size'. No files were found to uninstall.
+  Attempting uninstall: bcrypt
+    Found existing installation: bcrypt 3.2.0
+    Not uninstalling bcrypt at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'bcrypt'. No files were found to uninstall.
+  Attempting uninstall: bitstring
+    Found existing installation: bitstring 3.1.7
+    Not uninstalling bitstring at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'bitstring'. No files were found to uninstall.
+  Attempting uninstall: pyparsing
+    Found existing installation: pyparsing 2.4.7
+    Not uninstalling pyparsing at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pyparsing'. No files were found to uninstall.
+  Attempting uninstall: packaging
+    Found existing installation: packaging 20.4
+    Not uninstalling packaging at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'packaging'. No files were found to uninstall.
+  Attempting uninstall: webencodings
+    Found existing installation: webencodings 0.5.1
+    Not uninstalling webencodings at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'webencodings'. No files were found to uninstall.
+  Attempting uninstall: bleach
+    Found existing installation: bleach 3.2.1
+    Not uninstalling bleach at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'bleach'. No files were found to uninstall.
+  Attempting uninstall: blist
+    Found existing installation: blist 1.3.6
+    Not uninstalling blist at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'blist'. No files were found to uninstall.
+  Attempting uninstall: certifi
+    Found existing installation: certifi 2020.6.20
+    Not uninstalling certifi at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'certifi'. No files were found to uninstall.
+  Attempting uninstall: chardet
+    Found existing installation: chardet 3.0.4
+    Not uninstalling chardet at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'chardet'. No files were found to uninstall.
+  Attempting uninstall: cryptography
+    Found existing installation: cryptography 3.1.1
+    Not uninstalling cryptography at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'cryptography'. No files were found to uninstall.
+  Attempting uninstall: cycler
+    Found existing installation: cycler 0.10.0
+    Not uninstalling cycler at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'cycler'. No files were found to uninstall.
+  Attempting uninstall: Cython
+    Found existing installation: Cython 0.29.21
+    Not uninstalling cython at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'Cython'. No files were found to uninstall.
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.19.2
+    Not uninstalling numpy at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'numpy'. No files were found to uninstall.
+  Attempting uninstall: deap
+    Found existing installation: deap 1.3.1
+    Not uninstalling deap at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'deap'. No files were found to uninstall.
+  Attempting uninstall: decorator
+    Found existing installation: decorator 4.4.2
+    Not uninstalling decorator at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'decorator'. No files were found to uninstall.
+  Attempting uninstall: defusedxml
+    Found existing installation: defusedxml 0.6.0
+    Not uninstalling defusedxml at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'defusedxml'. No files were found to uninstall.
+  Attempting uninstall: dnspython
+    Found existing installation: dnspython 2.0.0
+    Not uninstalling dnspython at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'dnspython'. No files were found to uninstall.
+  Attempting uninstall: ecdsa
+    Found existing installation: ecdsa 0.16.0
+    Not uninstalling ecdsa at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'ecdsa'. No files were found to uninstall.
+  Attempting uninstall: entrypoints
+    Found existing installation: entrypoints 0.3
+    Not uninstalling entrypoints at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'entrypoints'. No files were found to uninstall.
+  Attempting uninstall: funcsigs
+    Found existing installation: funcsigs 1.0.2
+    Not uninstalling funcsigs at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'funcsigs'. No files were found to uninstall.
+  Attempting uninstall: idna
+    Found existing installation: idna 2.10
+    Not uninstalling idna at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'idna'. No files were found to uninstall.
+  Attempting uninstall: Pillow
+    Found existing installation: Pillow 7.2.0
+    Not uninstalling pillow at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'Pillow'. No files were found to uninstall.
+  Attempting uninstall: zipp
+    Found existing installation: zipp 3.3.0
+    Not uninstalling zipp at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'zipp'. No files were found to uninstall.
+  Attempting uninstall: importlib-metadata
+    Found existing installation: importlib-metadata 2.0.0
+    Not uninstalling importlib-metadata at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'importlib-metadata'. No files were found to uninstall.
+  Attempting uninstall: tornado
+    Found existing installation: tornado 6.0.4
+    Not uninstalling tornado at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'tornado'. No files were found to uninstall.
+  Attempting uninstall: traitlets
+    Found existing installation: traitlets 5.0.4
+    Not uninstalling traitlets at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'traitlets'. No files were found to uninstall.
+  Attempting uninstall: prompt-toolkit
+    Found existing installation: prompt-toolkit 3.0.7
+    Not uninstalling prompt-toolkit at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'prompt-toolkit'. No files were found to uninstall.
+  Attempting uninstall: Pygments
+    Found existing installation: Pygments 2.7.1
+    Not uninstalling pygments at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'Pygments'. No files were found to uninstall.
+  Attempting uninstall: parso
+    Found existing installation: parso 0.7.0
+    Not uninstalling parso at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'parso'. No files were found to uninstall.
+  Attempting uninstall: jedi
+    Found existing installation: jedi 0.17.2
+    Not uninstalling jedi at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'jedi'. No files were found to uninstall.
+  Attempting uninstall: ipython
+    Found existing installation: ipython 7.18.1
+    Not uninstalling ipython at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'ipython'. No files were found to uninstall.
+  Attempting uninstall: pyzmq
+    Found existing installation: pyzmq 19.0.2
+    Not uninstalling pyzmq at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pyzmq'. No files were found to uninstall.
+  Attempting uninstall: jupyter-core
+    Found existing installation: jupyter-core 4.6.3
+    Not uninstalling jupyter-core at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'jupyter-core'. No files were found to uninstall.
+  Attempting uninstall: jupyter-client
+    Found existing installation: jupyter-client 6.1.7
+    Not uninstalling jupyter-client at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'jupyter-client'. No files were found to uninstall.
+  Attempting uninstall: ipykernel
+    Found existing installation: ipykernel 5.3.4
+    Not uninstalling ipykernel at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'ipykernel'. No files were found to uninstall.
+  Attempting uninstall: pyrsistent
+    Found existing installation: pyrsistent 0.17.3
+    Not uninstalling pyrsistent at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pyrsistent'. No files were found to uninstall.
+  Attempting uninstall: jsonschema
+    Found existing installation: jsonschema 3.2.0
+    Not uninstalling jsonschema at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'jsonschema'. No files were found to uninstall.
+  Attempting uninstall: nbformat
+    Found existing installation: nbformat 5.0.7
+    Not uninstalling nbformat at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'nbformat'. No files were found to uninstall.
+  Attempting uninstall: testpath
+    Found existing installation: testpath 0.4.4
+    Not uninstalling testpath at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'testpath'. No files were found to uninstall.
+  Attempting uninstall: MarkupSafe
+    Found existing installation: MarkupSafe 1.1.1
+    Not uninstalling markupsafe at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'MarkupSafe'. No files were found to uninstall.
+  Attempting uninstall: Jinja2
+    Found existing installation: Jinja2 2.11.2
+    Not uninstalling jinja2 at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'Jinja2'. No files were found to uninstall.
+  Attempting uninstall: mistune
+    Found existing installation: mistune 0.8.4
+    Not uninstalling mistune at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'mistune'. No files were found to uninstall.
+  Attempting uninstall: nest-asyncio
+    Found existing installation: nest-asyncio 1.4.1
+    Not uninstalling nest-asyncio at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'nest-asyncio'. No files were found to uninstall.
+  Attempting uninstall: nbclient
+    Found existing installation: nbclient 0.5.0
+    Not uninstalling nbclient at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'nbclient'. No files were found to uninstall.
+  Attempting uninstall: pandocfilters
+    Found existing installation: pandocfilters 1.4.2
+    Not uninstalling pandocfilters at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pandocfilters'. No files were found to uninstall.
+  Attempting uninstall: jupyterlab-pygments
+    Found existing installation: jupyterlab-pygments 0.1.2
+    Not uninstalling jupyterlab-pygments at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'jupyterlab-pygments'. No files were found to uninstall.
+  Attempting uninstall: nbconvert
+    Found existing installation: nbconvert 6.0.7
+    Not uninstalling nbconvert at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'nbconvert'. No files were found to uninstall.
+  Attempting uninstall: prometheus-client
+    Found existing installation: prometheus-client 0.8.0
+    Not uninstalling prometheus-client at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'prometheus-client'. No files were found to uninstall.
+  Attempting uninstall: Send2Trash
+    Found existing installation: Send2Trash 1.5.0
+    Not uninstalling send2trash at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'Send2Trash'. No files were found to uninstall.
+  Attempting uninstall: ptyprocess
+    Found existing installation: ptyprocess 0.6.0
+    Not uninstalling ptyprocess at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'ptyprocess'. No files were found to uninstall.
+  Attempting uninstall: terminado
+    Found existing installation: terminado 0.9.1
+    Not uninstalling terminado at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'terminado'. No files were found to uninstall.
+  Attempting uninstall: notebook
+    Found existing installation: notebook 6.1.4
+    Not uninstalling notebook at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'notebook'. No files were found to uninstall.
+  Attempting uninstall: widgetsnbextension
+    Found existing installation: widgetsnbextension 3.5.1
+    Not uninstalling widgetsnbextension at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'widgetsnbextension'. No files were found to uninstall.
+  Attempting uninstall: ipywidgets
+    Found existing installation: ipywidgets 7.5.1
+    Not uninstalling ipywidgets at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'ipywidgets'. No files were found to uninstall.
+  Attempting uninstall: kiwisolver
+    Found existing installation: kiwisolver 1.2.0
+    Not uninstalling kiwisolver at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'kiwisolver'. No files were found to uninstall.
+  Attempting uninstall: lockfile
+    Found existing installation: lockfile 0.12.2
+    Not uninstalling lockfile at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'lockfile'. No files were found to uninstall.
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.3.2
+    Not uninstalling matplotlib at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'matplotlib'. No files were found to uninstall.
+  Attempting uninstall: mock
+    Found existing installation: mock 4.0.2
+    Not uninstalling mock at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'mock'. No files were found to uninstall.
+  Attempting uninstall: mpmath
+    Found existing installation: mpmath 1.1.0
+    Not uninstalling mpmath at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'mpmath'. No files were found to uninstall.
+  Attempting uninstall: netaddr
+    Found existing installation: netaddr 0.8.0
+    Not uninstalling netaddr at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'netaddr'. No files were found to uninstall.
+  Attempting uninstall: netifaces
+    Found existing installation: netifaces 0.10.9
+    Not uninstalling netifaces at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'netifaces'. No files were found to uninstall.
+  Attempting uninstall: nose
+    Found existing installation: nose 1.3.7
+    Not uninstalling nose at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'nose'. No files were found to uninstall.
+  Attempting uninstall: pytz
+    Found existing installation: pytz 2020.1
+    Not uninstalling pytz at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pytz'. No files were found to uninstall.
+  Attempting uninstall: pandas
+    Found existing installation: pandas 1.1.3
+    Not uninstalling pandas at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pandas'. No files were found to uninstall.
+  Attempting uninstall: PyNaCl
+    Found existing installation: PyNaCl 1.4.0
+    Not uninstalling pynacl at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'PyNaCl'. No files were found to uninstall.
+  Attempting uninstall: paramiko
+    Found existing installation: paramiko 2.7.2
+    Not uninstalling paramiko at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'paramiko'. No files were found to uninstall.
+  Attempting uninstall: path
+    Found existing installation: path 15.0.0
+    Not uninstalling path at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'path'. No files were found to uninstall.
+  Attempting uninstall: path.py
+    Found existing installation: path.py 12.5.0
+    Not uninstalling path.py at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'path.py'. No files were found to uninstall.
+  Attempting uninstall: pathlib2
+    Found existing installation: pathlib2 2.3.5
+    Not uninstalling pathlib2 at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pathlib2'. No files were found to uninstall.
+  Attempting uninstall: paycheck
+    Found existing installation: paycheck 1.0.2
+    Not uninstalling paycheck at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'paycheck'. No files were found to uninstall.
+  Attempting uninstall: pbr
+    Found existing installation: pbr 5.5.0
+    Not uninstalling pbr at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'pbr'. No files were found to uninstall.
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 1.25.10
+    Not uninstalling urllib3 at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'urllib3'. No files were found to uninstall.
+  Attempting uninstall: requests
+    Found existing installation: requests 2.24.0
+    Not uninstalling requests at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'requests'. No files were found to uninstall.
+  Attempting uninstall: scipy
+    Found existing installation: scipy 1.5.2
+    Not uninstalling scipy at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'scipy'. No files were found to uninstall.
+  Attempting uninstall: simplegeneric
+    Found existing installation: simplegeneric 0.8.1
+    Not uninstalling simplegeneric at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'simplegeneric'. No files were found to uninstall.
+  Attempting uninstall: singledispatch
+    Found existing installation: singledispatch 3.4.0.3
+    Not uninstalling singledispatch at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'singledispatch'. No files were found to uninstall.
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.6.2
+    Not uninstalling sympy at /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2020b/lib/python3.8/site-packages, outside environment /localscratch/suyuelyu.1925564.0/my_env
+    Can't uninstall 'sympy'. No files were found to uninstall.
+Successfully installed Cython-0.29.24+computecanada Jinja2-3.0.1+computecanada MarkupSafe-2.0.1+computecanada Pillow-8.3.1+computecanada Pillow-SIMD-7.0.0.post3+computecanada PyNaCl-1.4.0+computecanada PyOpenGL-3.1.5+computecanada Pygments-2.9.0+computecanada Send2Trash-1.7.1+computecanada arff-0.9+computecanada argon2-cffi-20.1.0+computecanada async-generator-1.10+computecanada attrs-21.2.0+computecanada backports-abc-0.5+computecanada backports.shutil-get-terminal-size-1.0.0+computecanada bcrypt-3.2.0+computecanada bitstring-3.1.7+computecanada bleach-3.3.1+computecanada blist-1.3.6+computecanada certifi-2021.5.30+computecanada cffi-1.14.6+computecanada chardet-4.0.0+computecanada charset-normalizer-2.0.2+computecanada click-8.0.0+computecanada cocos2d-0.6.9 cryptography-3.4.7+computecanada cycler-0.10.0+computecanada deap-1.3.1+computecanada debugpy-1.3.0+computecanada decorator-5.0.9+computecanada defusedxml-0.7.1+computecanada dill-0.3.2+computecanada dnspython-2.1.0+computecanada ecdsa-0.17.0+computecanada entrypoints-0.3+computecanada funcsigs-1.0.2+computecanada glfw-1.12.0+computecanada idna-3.2+computecanada imageio-2.9.0+computecanada imageio-ffmpeg-0.4.2+computecanada imgui-1.4.1 importlib-metadata-3.10.1+computecanada ipykernel-6.0.1+computecanada ipython-7.25.0+computecanada ipywidgets-7.6.3+computecanada jedi-0.18.0+computecanada jsonschema-3.2.0+computecanada jupyter-client-6.1.12+computecanada jupyter-core-4.7.1+computecanada jupyterlab-pygments-0.1.2+computecanada jupyterlab-widgets-1.0.0+computecanada kiwisolver-1.3.1+computecanada lockfile-0.12.2+computecanada matplotlib-3.4.2+computecanada matplotlib-inline-0.1.2+computecanada mistune-0.8.4+computecanada mock-4.0.3+computecanada mpmath-1.2.1+computecanada nbclient-0.5.3+computecanada nbconvert-6.1.0+computecanada nbformat-5.1.3+computecanada nest-asyncio-1.5.1+computecanada netaddr-0.8.0+computecanada netifaces-0.11.0+computecanada ninja-1.10.0.post2+computecanada nose-1.3.7+computecanada notebook-6.4.0+computecanada numpy-1.21.0+computecanada packaging-21.0+computecanada pandas-1.3.0+computecanada pandocfilters-1.4.3+computecanada paramiko-2.7.2+computecanada parso-0.8.2+computecanada path-16.0.0+computecanada path.py-12.5.0+computecanada pathlib2-2.3.6+computecanada paycheck-1.0.2+computecanada pbr-5.6.0+computecanada prometheus-client-0.11.0+computecanada prompt-toolkit-3.0.19+computecanada psutil-5.8.0+computecanada ptyprocess-0.7.0+computecanada pycparser-2.20+computecanada pygame-2.0.1+computecanada pyglet-1.5.21+computecanada pyparsing-2.4.7+computecanada pyrsistent-0.18.0+computecanada pytz-2021.1+computecanada pyzmq-22.1.0+computecanada requests-2.26.0+computecanada scipy-1.7.1+computecanada simplegeneric-0.8.1+computecanada singledispatch-3.6.2+computecanada six-1.16.0+computecanada sympy-1.8+computecanada terminado-0.10.1+computecanada testpath-0.5.0+computecanada timm-0.4.12+computecanada torch-1.8.1+cu111 torchvision-0.9.1+cu111 tornado-6.1+computecanada tqdm-4.62.3+computecanada traitlets-5.0.5+computecanada typing-extensions-3.10.0.0+computecanada urllib3-1.26.6+computecanada webencodings-0.5.1+computecanada widgetsnbextension-3.5.1+computecanada zipp-3.5.0+computecanada
+
+Training options:
+{
+  "G_kwargs": {
+    "class_name": "pg_modules.networks_fastgan.Generator",
+    "cond": false,
+    "synthesis_kwargs": {
+      "lite": true
+    }
+  },
+  "G_opt_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "betas": [
+      0,
+      0.99
+    ],
+    "eps": 1e-08,
+    "lr": 0.0002
+  },
+  "D_opt_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "betas": [
+      0,
+      0.99
+    ],
+    "eps": 1e-08,
+    "lr": 0.0002
+  },
+  "data_loader_kwargs": {
+    "pin_memory": true,
+    "prefetch_factor": 2,
+    "num_workers": 3
+  },
+  "training_set_kwargs": {
+    "class_name": "training.dataset.ImageFolderDataset",
+    "path": "/home/suyuelyu/scratch/proteinGAN/image-data/few-shot-image-datasets.zip",
+    "use_labels": false,
+    "max_size": 3259,
+    "xflip": true,
+    "resolution": 256,
+    "random_seed": 0
+  },
+  "num_gpus": 1,
+  "batch_size": 2,
+  "batch_gpu": 2,
+  "metrics": [
+    "fid50k_full"
+  ],
+  "total_kimg": 10000,
+  "kimg_per_tick": 4,
+  "image_snapshot_ticks": 50,
+  "network_snapshot_ticks": 50,
+  "random_seed": 0,
+  "ema_kimg": 0.625,
+  "restart_every": 9999999,
+  "loss_kwargs": {
+    "class_name": "training.loss.ProjectedGANLoss"
+  },
+  "D_kwargs": {
+    "class_name": "pg_modules.discriminator.ProjectedDiscriminator",
+    "diffaug": true,
+    "interp224": false,
+    "backbone_kwargs": {
+      "cout": 64,
+      "expand": true,
+      "proj_type": 2,
+      "num_discs": 4,
+      "separable": false,
+      "cond": false
+    }
+  },
+  "run_dir": "/scratch/suyuelyu/proteinGAN/projected_gan/image_out/00001-fastgan_lite-few-shot-image-datasets-gpus1-batch2"
+}
+
+Output directory:    /scratch/suyuelyu/proteinGAN/projected_gan/image_out/00001-fastgan_lite-few-shot-image-datasets-gpus1-batch2
+Number of GPUs:      1
+Batch size:          2 images
+Training duration:   10000 kimg
+Dataset path:        /home/suyuelyu/scratch/proteinGAN/image-data/few-shot-image-datasets.zip
+Dataset size:        3259 images
+Dataset resolution:  256
+Dataset labels:      False
+Dataset x-flips:     True
+
+Creating output directory...
+Launching processes...
+Loading training set...
+
+Num images:  6518
+Image shape: [3, 256, 256]
+Label shape: [0]
+
+Constructing networks...
+
+Generator              Parameters  Buffers  Output shape        Datatype
+---                    ---         ---      ---                 ---     
+mapping                -           -        [2, 1, 256]         float32 
+synthesis.init.init    16785408    16385    [2, 2048, 4, 4]     float32 
+synthesis.feat_8.0     -           -        [2, 2048, 8, 8]     float32 
+synthesis.feat_8.1     37748736    20480    [2, 2048, 8, 8]     float32 
+synthesis.feat_8.2     4096        4097     [2, 2048, 8, 8]     float32 
+synthesis.feat_8.3     -           -        [2, 1024, 8, 8]     float32 
+synthesis.feat_16.0    -           -        [2, 1024, 16, 16]   float32 
+synthesis.feat_16.1    9437184     10240    [2, 1024, 16, 16]   float32 
+synthesis.feat_16.2    2048        2049     [2, 1024, 16, 16]   float32 
+synthesis.feat_16.3    -           -        [2, 512, 16, 16]    float32 
+synthesis.feat_32.0    -           -        [2, 512, 32, 32]    float32 
+synthesis.feat_32.1    2359296     5120     [2, 512, 32, 32]    float32 
+synthesis.feat_32.2    1024        1025     [2, 512, 32, 32]    float32 
+synthesis.feat_32.3    -           -        [2, 256, 32, 32]    float32 
+synthesis.feat_64.0    -           -        [2, 256, 64, 64]    float32 
+synthesis.feat_64.1    1179648     2816     [2, 512, 64, 64]    float32 
+synthesis.feat_64.2    1024        1025     [2, 512, 64, 64]    float32 
+synthesis.feat_64.3    -           -        [2, 256, 64, 64]    float32 
+synthesis.se_64.main   8454144     33536    [2, 256, 1, 1]      float32 
+synthesis.se_64        -           -        [2, 256, 64, 64]    float32 
+synthesis.feat_128.0   -           -        [2, 256, 128, 128]  float32 
+synthesis.feat_128.1   589824      2560     [2, 256, 128, 128]  float32 
+synthesis.feat_128.2   512         513      [2, 256, 128, 128]  float32 
+synthesis.feat_128.3   -           -        [2, 128, 128, 128]  float32 
+synthesis.se_128.main  2113536     16768    [2, 128, 1, 1]      float32 
+synthesis.se_128       -           -        [2, 128, 128, 128]  float32 
+synthesis.feat_256.0   -           -        [2, 128, 256, 256]  float32 
+synthesis.feat_256.1   147456      1280     [2, 128, 256, 256]  float32 
+synthesis.feat_256.2   256         257      [2, 128, 256, 256]  float32 
+synthesis.feat_256.3   -           -        [2, 64, 256, 256]   float32 
+synthesis.se_256.main  528384      8384     [2, 64, 1, 1]       float32 
+synthesis.se_256       -           -        [2, 64, 256, 256]   float32 
+synthesis.to_big       1731        579      [2, 3, 256, 256]    float32 
+---                    ---         ---      ---                 ---     
+Total                  79354307    127114   -                   -       
+
+
+ProjectedDiscriminator                                               Parameters  Buffers  Output shape       Datatype
+---                                                                  ---         ---      ---                ---     
+feature_network.pretrained.layer0.0                                  864         -        [2, 32, 128, 128]  float32 
+feature_network.pretrained.layer0.1                                  64          65       [2, 32, 128, 128]  float32 
+feature_network.pretrained.layer0.3                                  896         98       [2, 16, 128, 128]  float32 
+feature_network.pretrained.layer0.4                                  13968       1062     [2, 24, 64, 64]    float32 
+feature_network.pretrained.layer1.0                                  39712       1702     [2, 40, 32, 32]    float32 
+feature_network.pretrained.layer2.0                                  198480      5289     [2, 80, 16, 16]    float32 
+feature_network.pretrained.layer2.1                                  446784      7977     [2, 112, 16, 16]   float32 
+feature_network.pretrained.layer3.0                                  1652640     18060    [2, 192, 8, 8]     float32 
+feature_network.pretrained.layer3.1                                  605440      5251     [2, 320, 8, 8]     float32 
+feature_network.scratch.layer0_ccm                                   1600        -        [2, 64, 64, 64]    float32 
+feature_network.scratch.layer1_ccm                                   5248        -        [2, 128, 32, 32]   float32 
+feature_network.scratch.layer2_ccm                                   28928       -        [2, 256, 16, 16]   float32 
+feature_network.scratch.layer3_ccm                                   164352      -        [2, 512, 8, 8]     float32 
+feature_network.scratch.layer3_csm.out_conv                          131328      -        [2, 256, 16, 16]   float32 
+feature_network.scratch.layer2_csm.skip_add.activation_post_process  -           -        [2, 256, 16, 16]   float32 
+feature_network.scratch.layer2_csm.out_conv                          32896       -        [2, 128, 32, 32]   float32 
+feature_network.scratch.layer1_csm.skip_add.activation_post_process  -           -        [2, 128, 32, 32]   float32 
+feature_network.scratch.layer1_csm.out_conv                          8256        -        [2, 64, 64, 64]    float32 
+feature_network.scratch.layer0_csm.skip_add.activation_post_process  -           -        [2, 64, 64, 64]    float32 
+feature_network.scratch.layer0_csm.out_conv                          4160        -        [2, 64, 128, 128]  float32 
+discriminator.mini_discs.0.main                                      2829120     19269    [2, 1, 5, 5]       float32 
+discriminator.mini_discs.1.main                                      2763392     18052    [2, 1, 5, 5]       float32 
+discriminator.mini_discs.2.main                                      2631936     16643    [2, 1, 5, 5]       float32 
+discriminator.mini_discs.3.main                                      2106880     13826    [2, 1, 5, 5]       float32 
+discriminator                                                        -           -        [2, 100]           float32 
+---                                                                  ---         ---      ---                ---     
+Total                                                                13666944    107294   -                  -       
+
+Distributing across 1 GPUs...
+Setting up training phases...
+Exporting sample images...
+Traceback (most recent call last):
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/train.py", line 266, in <module>
+    main() # pylint: disable=no-value-for-parameter
+  File "/localscratch/suyuelyu.1925564.0/my_env/lib/python3.8/site-packages/click/core.py", line 1134, in __call__
+    return self.main(*args, **kwargs)
+  File "/localscratch/suyuelyu.1925564.0/my_env/lib/python3.8/site-packages/click/core.py", line 1059, in main
+    rv = self.invoke(ctx)
+  File "/localscratch/suyuelyu.1925564.0/my_env/lib/python3.8/site-packages/click/core.py", line 1401, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/localscratch/suyuelyu.1925564.0/my_env/lib/python3.8/site-packages/click/core.py", line 767, in invoke
+    return __callback(*args, **kwargs)
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/train.py", line 252, in main
+    launch_training(c=c, desc=desc, outdir=opts.outdir, dry_run=opts.dry_run)
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/train.py", line 101, in launch_training
+    subprocess_fn(rank=0, c=c, temp_dir=temp_dir)
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/train.py", line 47, in subprocess_fn
+    training_loop.training_loop(rank=rank, **c)
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/training/training_loop.py", line 229, in training_loop
+    grid_size, images, labels = setup_snapshot_image_grid(training_set=training_set)
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/training/training_loop.py", line 71, in setup_snapshot_image_grid
+    images, labels = zip(*[training_set[i] for i in grid_indices])
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/training/training_loop.py", line 71, in <listcomp>
+    images, labels = zip(*[training_set[i] for i in grid_indices])
+  File "/scratch/suyuelyu/proteinGAN/projected_gan/training/dataset.py", line 104, in __getitem__
+    assert list(image.shape) == self.image_shape
+AssertionError
