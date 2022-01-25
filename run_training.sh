@@ -37,8 +37,8 @@ python ${REPO_DIR}/train.py \
     --cfg=fastgan_lite \
     --data=${DATA_DIR}/processed_few_shot_pokemon.zip \
     --gpus=1 \
-    --batch=64 \
+    --batch=128 \
     --mirror=1 \
     --snap=50 \
-    --batch-gpu=64 \
+    --batch-gpu=128 \
     --kimg=10000 \
