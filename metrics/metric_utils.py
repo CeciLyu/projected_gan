@@ -50,7 +50,7 @@ def get_feature_detector(url, device=torch.device('cpu'), num_gpus=1, rank=0, ve
         is_leader = (rank == 0)
         if not is_leader and num_gpus > 1:
             torch.distributed.barrier() # leader goes first
-        with dnnlib.util.open_url(url, verbose=(verbose and is_leader)) as f:
+        with open('/scratch/suyuelyu/proteinGAN/projected_gan/leg_pkl/inception-2015-12-05.pkl', 'rb') as f:
             _feature_detector_cache[key] = pickle.load(f).to(device)
         if is_leader and num_gpus > 1:
             torch.distributed.barrier() # others follow
