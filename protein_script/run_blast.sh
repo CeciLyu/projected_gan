@@ -26,7 +26,7 @@
 module load StdEnv/2020  gcc/9.3.0 blast+/2.12.0
 
 # 2. running actual blastp on compute node by submitting this script
-blastp -query ad5_hexon.fasta -db nr -out ad5_nr_blastp_default.txt
+blastp -query $SCRATCH/proteinGAN/ad5_hexon.fasta -db nr -out $SCRATCH/proteinGAN/ad5_nr_blastp_default.txt
 
 
 
