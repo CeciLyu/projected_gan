@@ -17,7 +17,7 @@ clustalo --in /scratch/suyuelyu/proteinGAN/ad5_hexon_seqdump_unaligned.fasta \
          --outfmt=clu \
          --maxnumseq=8000 \
          --maxseqlen=2000 \
-         --threads=4 \
+         --threads=8 \
          --verbose
 
 
