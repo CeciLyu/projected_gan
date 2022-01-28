@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=pro_gan_blastp
+#SBATCH --job-name=pro_gan_clustalo
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
 #SBATCH --time=1:00:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
@@ -8,7 +8,7 @@
 #SBATCH --mem=8GB               # adjust this according to the memory requirement per node you need
 #SBATCH --mail-user=cecilianlv@icloud.com # adjust this to match your email address
 #SBATCH --mail-type=ALL
-#SBATCH --output=slurm-%j-pro_gan_blastp.out
+#SBATCH --output=slurm-%j-pro_gan_clustalo.out
 
 module load StdEnv/2020  gcc/9.3.0 clustal-omega/1.2.4
 
