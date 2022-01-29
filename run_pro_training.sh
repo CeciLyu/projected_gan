@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=pro_gan_installation_test
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=00:15:00         # adjust this to match the walltime of your job
+#SBATCH --time=00:10:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -35,7 +35,7 @@ OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 python ${REPO_DIR}/train.py \
     --outdir=${OUTPUT_DIR} \
     --cfg=fastgan_lite \
-    --data=${DATA_DIR}/processed_few_shot_pokemon.zip \
+    --data=${DATA_DIR} \
     --gpus=1 \
     --batch=128 \
     --mirror=False \
