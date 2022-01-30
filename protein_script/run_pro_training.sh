@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=pro_gan_installation_test
+#SBATCH --job-name=pro_gan_pro
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
 #SBATCH --time=00:10:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
@@ -10,7 +10,7 @@
 #SBATCH --mail-user=cecilianlv@icloud.com # adjust this to match your email address
 #SBATCH --mail-type=ALL
 
-#SBATCH --output=slurm-%j-pro_gan_installation_test.out
+#SBATCH --output=slurm-%j-pro_gan_pro.out
 
 cd $SCRATCH 
 
@@ -28,7 +28,7 @@ pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirement
 # unzipped the downloaded few-shot.zip and procced pokemon
 # python dataset_tool.py --source=/scratch/suyuelyu/proteinGAN/image-data/few-shot-images/pokemon \
 # --dest=/scratch/suyuelyu/proteinGAN/image-data/processed_few_shot_pokemon.zip --resolution=256x256 --transform=center-crop
-DATA_DIR=/home/suyuelyu/scratch/proteinGAN/raw_pro_img_web_891
+DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 
