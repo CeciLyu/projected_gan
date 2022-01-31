@@ -37,8 +37,8 @@ python ${REPO_DIR}/train.py \
     --cfg=fastgan_lite \
     --data=${DATA_DIR} \
     --gpus=1 \
-    --batch=128 \
+    --batch=64 \
     --mirror=False \
     --snap=50 \
-    --batch-gpu=128 \
+    --batch-gpu=64 \
     --kimg=1000 \
