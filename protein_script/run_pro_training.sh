@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=pro_gan_pro
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=24:00:00         # adjust this to match the walltime of your job
+#SBATCH --time=50:00:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -41,4 +41,4 @@ python ${REPO_DIR}/train.py \
     --mirror=False \
     --snap=50 \
     --batch-gpu=64 \
-    --kimg=1000 \
+    --kimg=10000 \
