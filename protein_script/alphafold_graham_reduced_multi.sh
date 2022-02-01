@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=alphafold_GAN_gen_seqs
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=10:00:00         # adjust this to match the walltime of your job
+#SBATCH --time=00:15:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:v100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -25,10 +25,9 @@ REPO_DIR=$SCRATCH/alphafold # Set the appropriate path to AlphaFold's cloned rep
 DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 
 # Install alphafold and dependencies
-pip install --no-index six==1.15 numpy==1.19.2 scipy==1.4.1 pdbfixer alphafold
+pip install --no-index six==1.15 numpy==1.19.2 scipy==1.4.1 pdbfixer alphafold jaxlib-0.1.74+cuda11.cudnn82.computecanada typing-extensions-3.7.4.3+computecanada
 
 for file in ${DATA_DIR}/*
 do
 	bash $SCRATCH/ProteinGAN/projected_gan/protein_script/alphafold_graham_reduced_single.sh $file
 done
-    
