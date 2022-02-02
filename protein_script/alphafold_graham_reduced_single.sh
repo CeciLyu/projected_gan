@@ -24,5 +24,5 @@ python ${REPO_DIR}/run_alphafold.py \
    --jackhmmer_binary_path ${EBROOTHMMER}/bin/jackhmmer \
    --kalign_binary_path ${EBROOTKALIGN}/bin/kalign \
    --model_names model_1 \
-   --output_dir $SCRATCH/ProteinGAN/structure_gen_seq/ \
+   --output_dir $SCRATCH/proteinGAN/structure_gen_seq/ \
    --preset reduced_dbs
