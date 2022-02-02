@@ -29,5 +29,5 @@ pip install --no-index six==1.15 numpy==1.21.2 scipy==1.4.1 pdbfixer alphafold t
 
 for file in ${DATA_DIR}/*
 do
-	bash $SCRATCH/ProteinGAN/projected_gan/protein_script/alphafold_graham_reduced_single.sh $file
+	bash $SCRATCH/proteinGAN/projected_gan/protein_script/alphafold_graham_reduced_single.sh $file
 done
