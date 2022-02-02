@@ -14,7 +14,7 @@
 cd $SCRATCH 
 
 # Load your modules as before
-module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 kalign hmmer hh-suite openmm python/3.7
+module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 kalign hmmer hh-suite openmm/7.5.0 python/3.7
 
 # Generate your virtual environment in $SLURM_TMPDIR
 virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
