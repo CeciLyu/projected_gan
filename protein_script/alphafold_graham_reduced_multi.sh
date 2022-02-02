@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=alphafold_GAN_gen_seqs
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=00:15:00         # adjust this to match the walltime of your job
+#SBATCH --time=12:00:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:v100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -20,7 +20,7 @@ module load gcc openmpi cuda/11.1 cudacore/.11.1.1 cudnn/8.2.0 kalign hmmer hh-s
 virtualenv --no-download ${SLURM_TMPDIR}/my_env && source ${SLURM_TMPDIR}/my_env/bin/activate
 
 # Set the path to download dir
-DATA_DIR=$SCRATCH/ProteinGAN/generated_pro_seqs   # Set the appropriate path to your supporting data
+DATA_DIR=$SCRATCH/ProteinGAN/generated_pro_seqs_1   # Set the appropriate path to your supporting data
 REPO_DIR=$SCRATCH/alphafold # Set the appropriate path to AlphaFold's cloned repo
 DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 
