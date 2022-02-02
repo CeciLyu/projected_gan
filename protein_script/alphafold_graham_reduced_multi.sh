@@ -25,7 +25,7 @@ REPO_DIR=$SCRATCH/alphafold # Set the appropriate path to AlphaFold's cloned rep
 DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 
 # Install alphafold and dependencies
-pip install --no-index six==1.15 numpy==1.19.2 scipy==1.4.1 pdbfixer alphafold jaxlib-0.1.74+cuda11.cudnn82.computecanada typing-extensions-3.7.4.3+computecanada
+pip install --no-index six==1.15 numpy==1.19.2 scipy==1.4.1 pdbfixer alphafold typing-extensions==3.7.4.3+computecanada jaxlib==0.1.74+cuda11.cudnn82.computecanada 
 
 for file in ${DATA_DIR}/*
 do
