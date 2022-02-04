@@ -28,7 +28,7 @@ pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirement
 # unzipped the downloaded few-shot.zip and procced pokemon
 # python dataset_tool.py --source=/scratch/suyuelyu/proteinGAN/image-data/few-shot-images/pokemon \
 # --dest=/scratch/suyuelyu/proteinGAN/image-data/processed_few_shot_pokemon.zip --resolution=256x256 --transform=center-crop
-DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21_grayscale
+DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 
