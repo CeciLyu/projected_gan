@@ -331,9 +331,9 @@ class Interpolate(nn.Module):
 # "Self-Attention Generative Adversarial Networks." arXiv preprint arXiv:1805.08318 (2018)
 # https://github.com/heykeetae/Self-Attention-GAN.git
 
-class Self_Attention(nn.Module):
+class Self_Attn(nn.Module):
     def __init__(self, inChannels, k = 8):
-        super(Self_Attention, self).__init__()
+        super(Self_Attn, self).__init__()
         embedding_channels = inChannels // k  # C_bar
         self.key      = nn.Conv2d(inChannels, embedding_channels, 1)
         self.query    = nn.Conv2d(inChannels, embedding_channels, 1)
