@@ -331,38 +331,37 @@ class Interpolate(nn.Module):
 # "Self-Attention Generative Adversarial Networks." arXiv preprint arXiv:1805.08318 (2018)
 # https://github.com/heykeetae/Self-Attention-GAN.git
 
-class Self_Attn(nn.Module):
-    """ Self attention Layer"""
-    def __init__(self, in_dim):
-        super(Self_Attn,self).__init__()
-        self.chanel_in = in_dim
-        
-        self.query_conv = nn.Conv2d(in_channels = in_dim , out_channels = in_dim//8 , kernel_size = 1)
-        self.key_conv = nn.Conv2d(in_channels = in_dim , out_channels = in_dim//8 , kernel_size = 1)
-        self.value_conv = nn.Conv2d(in_channels = in_dim , out_channels = in_dim , kernel_size = 1)
-        self.gamma = nn.Parameter(torch.zeros(1))
+class Self_Attention(nn.Module):
+    def __init__(self, inChannels, k = 8):
+        super(Self_Attention, self).__init__()
+        embedding_channels = inChannels // k  # C_bar
+        self.key      = nn.Conv2d(inChannels, embedding_channels, 1)
+        self.query    = nn.Conv2d(inChannels, embedding_channels, 1)
+        self.value    = nn.Conv2d(inChannels, embedding_channels, 1)
+        self.self_att = nn.Conv2d(embedding_channels, inChannels, 1)
+        self.gamma    = nn.Parameter(torch.tensor(0.0))
+        self.softmax  = nn.Softmax(dim=1)
 
-        self.softmax  = nn.Softmax(dim = -1) 
-        self.activation = torch.nn.LeakyReLU(negative_slope=0.01, inplace=False)
-        
-    def forward(self, x):
+    def forward(self,x):
         """
-            inputs :
-                x : input feature maps (B X C X W X H)
-            returns :
-                out : self attention value + input feature (B X C X W X H)
-                attention: B X N X N (N is Width*Height)
+            inputs:
+                x: input feature map [Batch, Channel, Height, Width]
+            returns:
+                out: self attention value + input feature
+                attention: [Batch, Channel, Height, Width]
         """
-        m_batchsize, C, width , height = x.size()
-        proj_query  = self.query_conv(x).view(m_batchsize, -1, width*height).permute(0,2,1) # B X CX(N)
-        proj_key =  self.key_conv(x).view(m_batchsize, -1, width*height) # B X C x (*W*H)
-        energy =  torch.bmm(proj_query, proj_key) # transpose check
-        attention = self.softmax(energy) # BX (N) X (N) 
-        proj_value = self.value_conv(x).view(m_batchsize, -1, width*height) # B X C X N
+        batchsize, C, H, W = x.size()
+        N = H * W                                       # Number of features
+        f_x = self.key(x).view(batchsize,   -1, N)      # Keys                  [B, C_bar, N]
+        g_x = self.query(x).view(batchsize, -1, N)      # Queries               [B, C_bar, N]
+        h_x = self.value(x).view(batchsize, -1, N)      # Values                [B, C_bar, N]
 
-        out = torch.bmm(proj_value, attention.permute(0,2,1) )
-        out = out.view(m_batchsize, C, width,height)
+        s =  torch.bmm(f_x.permute(0,2,1), g_x)         # Scores                [B, N, N]
+        beta = self.softmax(s)                          # Attention Map         [B, N, N]
+
+        v = torch.bmm(h_x, beta)                        # Value x Softmax       [B, C_bar, N]
+        v = v.view(batchsize, -1, H, W)                 # Recover input shape   [B, C_bar, H, W]
+        o = self.self_att(v)                            # Self-Attention output [B, C, H, W]
         
-        out = self.gamma * out + x
-        out = self.activation(out)
-        return out, attention
+        y = self.gamma * o + x                          # Learnable gamma + residual
+        return y, beta

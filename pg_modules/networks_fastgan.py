@@ -34,7 +34,7 @@ class FastganSynthesis(nn.Module):
         # layers
         self.init = InitLayer(z_dim, channel=nfc[2], sz=4)
 
-        UpBlock = UpBlockSmall if lite else UpBlockBig
+        UpBlock = UpBlockSmall if lite else UpBlockBig # in_planes, out_planes
 
         self.feat_8   = UpBlock(nfc[4], nfc[8])
         self.feat_16  = UpBlock(nfc[8], nfc[16])
@@ -43,11 +43,12 @@ class FastganSynthesis(nn.Module):
         self.feat_128 = UpBlock(nfc[64], nfc[128])
         self.feat_256 = UpBlock(nfc[128], nfc[256])
 
-        self.se_64  = SEBlock(nfc[4], nfc[64])
+        self.se_64  = SEBlock(nfc[4], nfc[64]) # ch_in, ch_out
         self.se_128 = SEBlock(nfc[8], nfc[128])
         self.se_256 = SEBlock(nfc[16], nfc[256])
 
-        self.attn = Self_Attn(nfc[img_resolution])
+        # self.attn_8 = Self_Attn(inChannels = nfc[8], k = 8)
+        self.attn_16 = Self_Attn(inChannels = nfc[16], k = 8)
 
         self.to_big = conv2d(nfc[img_resolution], nc, 3, 1, 1, bias=True)
 
@@ -64,8 +65,9 @@ class FastganSynthesis(nn.Module):
         feat_4 = self.init(input)
         feat_8 = self.feat_8(feat_4)
         feat_16 = self.feat_16(feat_8)
+        feat_16 = self.attn_16(feat_16)
         feat_32 = self.feat_32(feat_16)
-        feat_64 = self.se_64(feat_4, self.feat_64(feat_32))
+        feat_64 = self.se_64(feat_4, self.feat_64(feat_32)) # feat_small, feat_big
         feat_128 = self.se_128(feat_8,  self.feat_128(feat_64))
 
         if self.img_resolution >= 128:
