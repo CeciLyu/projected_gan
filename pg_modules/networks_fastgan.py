@@ -49,6 +49,7 @@ class FastganSynthesis(nn.Module):
 
         # self.attn_8 = Self_Attn(inChannels = nfc[8], k = 8)
         self.attn_16 = Self_Attn(inChannels = nfc[16], k = 8)
+        # self.attn = Self_Attn(nfc[img_resolution], k = 8)
 
         self.to_big = conv2d(nfc[img_resolution], nc, 3, 1, 1, bias=True)
 
@@ -65,7 +66,7 @@ class FastganSynthesis(nn.Module):
         feat_4 = self.init(input)
         feat_8 = self.feat_8(feat_4)
         feat_16 = self.feat_16(feat_8)
-        feat_16 = self.attn_16(feat_16)
+        feat_16 = self.attn_16(feat_16)[0] # only take the output
         feat_32 = self.feat_32(feat_16)
         feat_64 = self.se_64(feat_4, self.feat_64(feat_32)) # feat_small, feat_big
         feat_128 = self.se_128(feat_8,  self.feat_128(feat_64))
@@ -82,9 +83,9 @@ class FastganSynthesis(nn.Module):
         if self.img_resolution >= 1024:
             feat_last = self.feat_1024(feat_last)
 
-        feat_attn = self.attn(feat_last)
+        # feat_attn = self.attn(feat_last)
 
-        return self.to_big(feat_attn)
+        return self.to_big(feat_last)
 
 
 # class FastganSynthesisCond(nn.Module):
