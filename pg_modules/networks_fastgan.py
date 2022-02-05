@@ -19,11 +19,11 @@ class DummyMapping(nn.Module):
 
 
 class FastganSynthesis(nn.Module):
-    def __init__(self, ngf=128, z_dim=256, nc=3, img_resolution=256, lite=False):
+    def __init__(self, attn_res, ngf=128, z_dim=256, nc=3, img_resolution=256, lite=False):
         super().__init__()
         self.img_resolution = img_resolution
         self.z_dim = z_dim
-
+        self.attn_res = attn_res
         # channel multiplier
         nfc_multi = {2: 16, 4:16, 8:8, 16:4, 32:2, 64:2, 128:1, 256:0.5,
                      512:0.25, 1024:0.125}
@@ -46,10 +46,8 @@ class FastganSynthesis(nn.Module):
         self.se_64  = SEBlock(nfc[4], nfc[64]) # ch_in, ch_out
         self.se_128 = SEBlock(nfc[8], nfc[128])
         self.se_256 = SEBlock(nfc[16], nfc[256])
-
-        # self.attn_8 = Self_Attn(inChannels = nfc[8], k = 8)
-        self.attn_16 = Self_Attn(inChannels = nfc[16], k = 8)
-        # self.attn = Self_Attn(nfc[img_resolution], k = 8)
+        
+        self.attn = Self_Attn(inChannels = nfc[attn_res], k = 8)
 
         self.to_big = conv2d(nfc[img_resolution], nc, 3, 1, 1, bias=True)
 
@@ -66,10 +64,17 @@ class FastganSynthesis(nn.Module):
         feat_4 = self.init(input)
         feat_8 = self.feat_8(feat_4)
         feat_16 = self.feat_16(feat_8)
-        feat_16 = self.attn_16(feat_16)[0] # only take the output
+        if self.attn_res == 16:
+            feat_16 = self.attn(feat_16)[0] # only take the output
         feat_32 = self.feat_32(feat_16)
+        if self.attn_res == 32:
+            feat_32 = self.attn(feat_32)[0]
         feat_64 = self.se_64(feat_4, self.feat_64(feat_32)) # feat_small, feat_big
+        if self.attn_res == 64:
+            feat_64 = self.attn(feat_64)[0]
         feat_128 = self.se_128(feat_8,  self.feat_128(feat_64))
+        if self.attn_res == 128:
+            feat_128 = self.attn(feat_128)[0]
 
         if self.img_resolution >= 128:
             feat_last = feat_128
@@ -83,7 +88,8 @@ class FastganSynthesis(nn.Module):
         if self.img_resolution >= 1024:
             feat_last = self.feat_1024(feat_last)
 
-        # feat_attn = self.attn(feat_last)
+        if self.attn_res == 256:
+            feat_last = self.attn(feat_last)[0]
 
         return self.to_big(feat_last)
 

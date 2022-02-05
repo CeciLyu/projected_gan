@@ -144,6 +144,7 @@ def parse_comma_separated_list(s):
 @click.option('--glr',          help='G learning rate  [default: varies]', metavar='FLOAT',     type=click.FloatRange(min=0))
 @click.option('--dlr',          help='D learning rate', metavar='FLOAT',                        type=click.FloatRange(min=0), default=0.002, show_default=True)
 @click.option('--map-depth',    help='Mapping network depth  [default: varies]', metavar='INT', type=click.IntRange(min=1))
+@click.option('--attn_res',     help='attention layer resolution in generator', metavar='INT',  type=click.IntRange(min=8), default=16, show_default=True)
 
 # Misc settings.
 @click.option('--desc',         help='String to include in result dir name', metavar='STR',     type=str)
@@ -209,6 +210,7 @@ def main(**kwargs):
     elif opts.cfg in ['fastgan', 'fastgan_lite']:
         c.G_kwargs = dnnlib.EasyDict(class_name='pg_modules.networks_fastgan.Generator', cond=opts.cond, synthesis_kwargs=dnnlib.EasyDict())
         c.G_kwargs.synthesis_kwargs.lite = (opts.cfg == 'fastgan_lite')
+        c.G_kwargs.synthesis_kwargs.attn_res = opts.attn_res
         c.G_opt_kwargs.lr = c.D_opt_kwargs.lr = 0.0002
         use_separable_discs = False
 
