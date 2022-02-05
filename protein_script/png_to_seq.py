@@ -58,7 +58,8 @@ def get_aa(row_array):
   return(ID_TO_AA[np.argmax(row_array)])
 
 def get_seq(fakes, seq_dir, res = 166):
-  print(f'seqs saved in {os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq/', seq_dir)}')
+  full_seq_dir = os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq/', seq_dir)
+  print(f'seqs saved in {full_seq_dir}')
   for key, fake in fakes.items():
     for i, col in enumerate(np.split(fake, 30, axis = 1)):
       for j, im in enumerate(np.split(col, 16)):
@@ -73,7 +74,7 @@ def get_seq(fakes, seq_dir, res = 166):
         
         pro_seq_r = SeqRecord(pro_seq, id=f"{key}_{i}_{j}")
         if i%10 == 0 and j%5 == 0:
-          file_name = os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq', seq_dir, f'{key}_{i}_{j}.fasta')
+          file_name = os.path.join(full_seq_dir, f'{key}_{i}_{j}.fasta')
           with open(file_name, "w") as output_handle:
             SeqIO.write(pro_seq_r, output_handle, "fasta")
 
