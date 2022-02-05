@@ -44,7 +44,7 @@ class SingleDisc(nn.Module):
         while start_sz > end_sz:
             layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
             start_sz = start_sz // 2
-            if not d_attn_res == None:
+            if not d_attn_res is None:
                 if start_sz == d_attn_res:
                     layers.append(Self_Attn(inChannels = nfc[start_sz]))
             
