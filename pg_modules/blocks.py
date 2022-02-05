@@ -341,6 +341,7 @@ class Self_Attn(nn.Module):
         self.self_att = nn.Conv2d(embedding_channels, inChannels, 1)
         self.gamma    = nn.Parameter(torch.tensor(0.0))
         self.softmax  = nn.Softmax(dim=1)
+        self.activation = nn.LeakyReLU(negative_slope=0.01, inplace=False)
 
     def forward(self,x):
         """
@@ -364,4 +365,5 @@ class Self_Attn(nn.Module):
         o = self.self_att(v)                            # Self-Attention output [B, C, H, W]
         
         y = self.gamma * o + x                          # Learnable gamma + residual
+        y = self.activation(y)
         return y, beta
