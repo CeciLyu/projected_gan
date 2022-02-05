@@ -12,6 +12,12 @@ from matplotlib import pyplot as plt
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
+import argparse
+
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('seq_dir', type=str,
+                    help='name for the folder to keep this batch of seq result')
+args = parser.parse_args()
 
 # 21 col version ( w/o X)
 ID_TO_AA = {
@@ -52,6 +58,7 @@ def get_aa(row_array):
   return(ID_TO_AA[np.argmax(row_array)])
 
 def get_seq(fakes, seq_dir, res = 166):
+  print(f'seqs saved in {os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq', seq_dir)}')
   for key, fake in fakes.items():
     for i, col in enumerate(np.split(fake, 30, axis = 1)):
       for j, im in enumerate(np.split(col, 16)):
@@ -66,9 +73,9 @@ def get_seq(fakes, seq_dir, res = 166):
         
         pro_seq_r = SeqRecord(pro_seq, id=f"{key}_{i}_{j}")
         if i%10 == 0 and j%5 == 0:
-          file_name = os.path.join(seq_dir, f'{key}_{i}_{j}.fasta')
+          file_name = os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq', seq_dir, f'{key}_{i}_{j}.fasta')
           with open(file_name, "w") as output_handle:
             SeqIO.write(pro_seq_r, output_handle, "fasta")
 
 fakes = read_fake('/home/suyuelyu/scratch/proteinGAN/pro_out_png_to_be_prcd/')
-get_seq(fakes, '/home/suyuelyu/scratch/proteinGAN/pro_out_seq/', res = 166)
+get_seq(fakes, seq_dir = args.seq_dir, res = 166)
