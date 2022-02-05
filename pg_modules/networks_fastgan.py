@@ -47,7 +47,8 @@ class FastganSynthesis(nn.Module):
         self.se_128 = SEBlock(nfc[8], nfc[128])
         self.se_256 = SEBlock(nfc[16], nfc[256])
         
-        self.attn = Self_Attn(inChannels = nfc[attn_res], k = 8)
+        if not attn_res = None:
+            self.attn = Self_Attn(inChannels = nfc[attn_res], k = 8)
 
         self.to_big = conv2d(nfc[img_resolution], nc, 3, 1, 1, bias=True)
 

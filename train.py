@@ -144,7 +144,7 @@ def parse_comma_separated_list(s):
 @click.option('--glr',          help='G learning rate  [default: varies]', metavar='FLOAT',     type=click.FloatRange(min=0))
 @click.option('--dlr',          help='D learning rate', metavar='FLOAT',                        type=click.FloatRange(min=0), default=0.002, show_default=True)
 @click.option('--map-depth',    help='Mapping network depth  [default: varies]', metavar='INT', type=click.IntRange(min=1))
-@click.option('--attn_res',     help='attention layer resolution in generator', metavar='INT',  type=click.IntRange(min=8), default=32, show_default=True)
+@click.option('--attn_res',     help='attention layer resolution in generator', metavar='INT',  type=click.IntRange(min=8), default=None, show_default=True)
 @click.option('--d_attn_res',     help='attention layer resolution in discriminator', metavar='INT',  type=click.IntRange(min=8), default=None, show_default=True)
 
 # Misc settings.
