@@ -58,7 +58,7 @@ def get_aa(row_array):
   return(ID_TO_AA[np.argmax(row_array)])
 
 def get_seq(fakes, seq_dir, res = 166):
-  print(f'seqs saved in {os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq', seq_dir)}')
+  print(f'seqs saved in {os.path.join('/home/suyuelyu/scratch/proteinGAN/pro_out_seq/', seq_dir)}')
   for key, fake in fakes.items():
     for i, col in enumerate(np.split(fake, 30, axis = 1)):
       for j, im in enumerate(np.split(col, 16)):
