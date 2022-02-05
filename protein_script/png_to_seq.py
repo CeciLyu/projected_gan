@@ -15,7 +15,7 @@ from Bio.Seq import Seq
 import argparse
 
 parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('seq_dir', type=str,
+parser.add_argument('--seq_dir', type=str,
                     help='name for the folder to keep this batch of seq result')
 args = parser.parse_args()
 
