@@ -186,7 +186,7 @@ class DownBlock(nn.Module):
                 nn.LeakyReLU(0.2, inplace=True),
                 nn.AvgPool2d(2, 2),
             )
-
+        
     def forward(self, feat):
         return self.main(feat)
 
