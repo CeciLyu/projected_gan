@@ -145,6 +145,7 @@ def parse_comma_separated_list(s):
 @click.option('--dlr',          help='D learning rate', metavar='FLOAT',                        type=click.FloatRange(min=0), default=0.002, show_default=True)
 @click.option('--map-depth',    help='Mapping network depth  [default: varies]', metavar='INT', type=click.IntRange(min=1))
 @click.option('--attn_res',     help='attention layer resolution in generator', metavar='INT',  type=click.IntRange(min=8), default=32, show_default=True)
+@click.option('--d_attn_res',     help='attention layer resolution in discriminator', metavar='INT',  type=click.IntRange(min=8), default=None, show_default=True)
 
 # Misc settings.
 @click.option('--desc',         help='String to include in result dir name', metavar='STR',     type=str)
@@ -249,6 +250,7 @@ def main(**kwargs):
     c.D_kwargs.backbone_kwargs.num_discs = 4
     c.D_kwargs.backbone_kwargs.separable = use_separable_discs
     c.D_kwargs.backbone_kwargs.cond = opts.cond
+    c.D_kwargs.backbone_kwargs.d_attn_res = opts.d_attn_res
 
     # Launch.
     launch_training(c=c, desc=desc, outdir=opts.outdir, dry_run=opts.dry_run)

@@ -4,13 +4,13 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from pg_modules.blocks import DownBlock, DownBlockPatch, conv2d
+from pg_modules.blocks import DownBlock, DownBlockPatch, conv2d, Self_Attn
 from pg_modules.projector import F_RandomProj
 from pg_modules.diffaug import DiffAugment
 
 
 class SingleDisc(nn.Module):
-    def __init__(self, nc=None, ndf=None, start_sz=256, end_sz=8, head=None, separable=False, patch=False):
+    def __init__(self, nc=None, ndf=None, start_sz=256, end_sz=8, head=None, separable=False, patch=False, d_attn_res=None):
         super().__init__()
         channel_dict = {4: 512, 8: 512, 16: 256, 32: 128, 64: 64, 128: 64,
                         256: 32, 512: 16, 1024: 8}
@@ -44,7 +44,10 @@ class SingleDisc(nn.Module):
         while start_sz > end_sz:
             layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
             start_sz = start_sz // 2
-
+            if not d_attn_res == None:
+                if start_sz == d_attn_res:
+                    layers.append(Self_Attn(inChannels = nfc[start_sz]))
+            
         layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
         self.main = nn.Sequential(*layers)
 
@@ -116,6 +119,7 @@ class MultiScaleD(nn.Module):
         self,
         channels,
         resolutions,
+        d_attn_res = None,
         num_discs=1,
         proj_type=2,  # 0 = no projection, 1 = cross channel mixing, 2 = cross scale mixing
         cond=0,
@@ -135,7 +139,7 @@ class MultiScaleD(nn.Module):
         mini_discs = []
         for i, (cin, res) in enumerate(zip(self.disc_in_channels, self.disc_in_res)):
             start_sz = res if not patch else 16
-            mini_discs += [str(i), Disc(nc=cin, start_sz=start_sz, end_sz=8, separable=separable, patch=patch)],
+            mini_discs += [str(i), Disc(nc=cin, start_sz=start_sz, end_sz=8, separable=separable, patch=patch, d_attn_res=d_attn_res)],
         self.mini_discs = nn.ModuleDict(mini_discs)
 
     def forward(self, features, c):
