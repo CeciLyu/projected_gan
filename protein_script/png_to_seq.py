@@ -47,7 +47,8 @@ ID_TO_AA = {
 def read_fake(png_dir):
   fakes = {}
   for png in os.listdir(png_dir):
-    fake = Image.open(png)
+    full_png_dir = os.path.join(png_dir, png)
+    fake = Image.open(full_png_dir)
     fake = np.array(fake)
     fake = np.mean(fake, axis=2)
     print(fake.shape)
