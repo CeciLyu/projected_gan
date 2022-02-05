@@ -66,16 +66,16 @@ class FastganSynthesis(nn.Module):
         feat_8 = self.feat_8(feat_4)
         feat_16 = self.feat_16(feat_8)
         if self.attn_res == 16:
-            feat_16 = self.attn(feat_16)[0] # only take the output
+            feat_16 = self.attn(feat_16)
         feat_32 = self.feat_32(feat_16)
         if self.attn_res == 32:
-            feat_32 = self.attn(feat_32)[0]
+            feat_32 = self.attn(feat_32)
         feat_64 = self.se_64(feat_4, self.feat_64(feat_32)) # feat_small, feat_big
         if self.attn_res == 64:
-            feat_64 = self.attn(feat_64)[0]
+            feat_64 = self.attn(feat_64)
         feat_128 = self.se_128(feat_8,  self.feat_128(feat_64))
         if self.attn_res == 128:
-            feat_128 = self.attn(feat_128)[0]
+            feat_128 = self.attn(feat_128)
 
         if self.img_resolution >= 128:
             feat_last = feat_128
@@ -90,7 +90,7 @@ class FastganSynthesis(nn.Module):
             feat_last = self.feat_1024(feat_last)
 
         if self.attn_res == 256:
-            feat_last = self.attn(feat_last)[0]
+            feat_last = self.attn(feat_last)
 
         return self.to_big(feat_last)
 
