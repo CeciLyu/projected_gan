@@ -43,7 +43,7 @@ class SingleDisc(nn.Module):
         # Down Blocks
         DB = partial(DownBlockPatch, separable=separable) if patch else partial(DownBlock, separable=separable)
         if start_sz >= self.d_attn_res: 
-
+            layers_1_len = 0
             while start_sz > end_sz:
                 if not self.d_attn_res is None:
                     if start_sz == self.d_attn_res:
@@ -55,10 +55,14 @@ class SingleDisc(nn.Module):
                 start_sz = start_sz // 2
 
             layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
-            layers_1 = layers[0:layers_1_len]
-            layers_2 = layers[layers_1_len:]
-            self.main_1 = nn.Sequential(*layers_1)
-            self.main_2 = nn.Sequential(*layers_2)
+
+            if layers_1_len == 0 :
+                self.main = nn.Sequential(*layers)
+            else:
+                layers_1 = layers[0:layers_1_len]
+                layers_2 = layers[layers_1_len:]
+                self.main_1 = nn.Sequential(*layers_1)
+                self.main_2 = nn.Sequential(*layers_2)
 
         else:
 
@@ -168,6 +172,8 @@ class MultiScaleD(nn.Module):
         all_logits = []
         all_d_attn_maps = []
         for k, disc in self.mini_discs.items():
+            print(k)
+            print(disc.start_sz)
             logits_d_attn_map = disc(features[k], c)
             all_logits.append(logits_d_attn_map[0].view(features[k].size(0), -1))
             all_d_attn_maps.append(logits_d_attn_map[1])
