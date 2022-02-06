@@ -189,8 +189,8 @@ class Generator(nn.Module):
     def forward(self, z, c, return_attn_map = False, **kwargs):
         w = self.mapping(z, c)
         img, g_attn_map  = self.synthesis(w, c)
+        print(return_attn_map)
         if return_attn_map:
             return img, g_attn_map
         else: 
-            print(img.size)
             return img
