@@ -12,6 +12,7 @@ from pg_modules.diffaug import DiffAugment
 class SingleDisc(nn.Module):
     def __init__(self, nc=None, ndf=None, start_sz=256, end_sz=8, head=None, separable=False, patch=False, d_attn_res=None):
         super().__init__()
+        self.d_attn_res = d_attn_res
         channel_dict = {4: 512, 8: 512, 16: 256, 32: 128, 64: 64, 128: 64,
                         256: 32, 512: 16, 1024: 8}
 
@@ -41,26 +42,39 @@ class SingleDisc(nn.Module):
 
         # Down Blocks
         DB = partial(DownBlockPatch, separable=separable) if patch else partial(DownBlock, separable=separable)
-        while start_sz > end_sz:
-            layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
-            start_sz = start_sz // 2
-            if not d_attn_res is None:
-                if start_sz == d_attn_res:
-                    layers.append(Self_Attn(inChannels = nfc[start_sz]))
-                    layers_1_len = len(layers)
-                    print(f"d_attn_res:{d_attn_res}")
-                else:
-                    print('start_sz != d_attn_res')
+        if start_sz >= self.d_attn_res: 
+
+            while start_sz > end_sz:
+                if not self.d_attn_res is None:
+                    if start_sz == self.d_attn_res:
+                        layers.append(Self_Attn(inChannels = nfc[start_sz]))
+                        layers_1_len = len(layers)
+                        print(f"self.d_attn_res:{self.d_attn_res}")
+
+                layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
+                start_sz = start_sz // 2
+
+            layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
+            layers_1 = layers[0:layers_1_len]
+            layers_2 = layers[layers_1_len:]
+            self.main_1 = nn.Sequential(*layers_1)
+            self.main_2 = nn.Sequential(*layers_2)
+
+        else:
+
+            while start_sz > end_sz:
+                layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
+                start_sz = start_sz // 2
             
-        layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
-        layers_1 = layers[0:layers_1_len]
-        layers_2 = layers[layers_1_len:]
-        self.main_1 = nn.Sequential(*layers_1)
-        self.main_2 = nn.Sequential(*layers_2)
+            layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
+            self.main = nn.Sequential(*layers)
 
     def forward(self, x, c):
-        out_layers_to_attn, d_attn_map = self.main_1(x)
-        return self.main_2(out_layers_to_attn), d_attn_map
+        if hasattr(self, 'main'):
+            return(self.main(x))
+        else:
+            out_layers_to_attn, d_attn_map = self.main_1(x)
+            return self.main_2(out_layers_to_attn), d_attn_map
 
 
 class SingleDiscCond(nn.Module):
