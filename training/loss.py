@@ -32,7 +32,7 @@ class ProjectedGANLoss(Loss):
 
     def run_G(self, z, c, update_emas=False):
         ws = self.G.mapping(z, c, update_emas=update_emas)
-        img = self.G.synthesis(ws, c, update_emas=False)
+        img, _ = self.G.synthesis(ws, c, update_emas=False)
         return img
 
     def run_D(self, img, c, blur_sigma=0, update_emas=False):
