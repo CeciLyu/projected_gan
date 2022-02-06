@@ -192,4 +192,5 @@ class Generator(nn.Module):
         if return_attn_map:
             return img, g_attn_map
         else: 
+            print(img.size)
             return img
