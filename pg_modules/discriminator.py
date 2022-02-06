@@ -48,6 +48,7 @@ class SingleDisc(nn.Module):
                 if start_sz == d_attn_res:
                     layers.append(Self_Attn(inChannels = nfc[start_sz]))
                     layers_1_len = len(layers)
+                    print(f"d_attn_res:{d_attn_res}")
             
         layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
         layers_1 = layers[0:layers_1_len]
