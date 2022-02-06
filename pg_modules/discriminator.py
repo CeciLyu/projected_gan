@@ -47,12 +47,17 @@ class SingleDisc(nn.Module):
             if not d_attn_res is None:
                 if start_sz == d_attn_res:
                     layers.append(Self_Attn(inChannels = nfc[start_sz]))
+                    layers_1_len = len(layers)
             
         layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
-        self.main = nn.Sequential(*layers)
+        layers_1 = layers[0:layers_1_len]
+        layers_2 = layers[layers_1_len:]
+        self.main_1 = nn.Sequential(*layers_1)
+        self.main_2 = nn.Sequential(*layers_2)
 
     def forward(self, x, c):
-        return self.main(x)
+        out_layers_to_attn, d_attn_map = self.main_1(x)
+        return self.main_2(out_layers_to_attn), d_attn_map
 
 
 class SingleDiscCond(nn.Module):
@@ -144,11 +149,14 @@ class MultiScaleD(nn.Module):
 
     def forward(self, features, c):
         all_logits = []
+        all_d_attn_maps = []
         for k, disc in self.mini_discs.items():
-            all_logits.append(disc(features[k], c).view(features[k].size(0), -1))
+            logits_d_attn_map = disc(features[k], c)
+            all_logits.append(logits_d_attn_map[0].view(features[k].size(0), -1))
+            all_d_attn_maps.append(logits_d_attn_map[1])
 
         all_logits = torch.cat(all_logits, dim=1)
-        return all_logits
+        return all_logits, all_d_attn_maps
 
 
 class ProjectedDiscriminator(torch.nn.Module):
@@ -177,7 +185,7 @@ class ProjectedDiscriminator(torch.nn.Module):
     def eval(self):
         return self.train(False)
 
-    def forward(self, x, c):
+    def forward(self, x, c, return_d_attn_map = False):
         if self.diffaug:
             x = DiffAugment(x, policy='color,translation,cutout')
 
@@ -185,6 +193,9 @@ class ProjectedDiscriminator(torch.nn.Module):
             x = F.interpolate(x, 224, mode='bilinear', align_corners=False)
 
         features = self.feature_network(x)
-        logits = self.discriminator(features, c)
+        logits, attn_maps = self.discriminator(features, c)
 
-        return logits
+        if return_d_attn_map:
+            return logits, attn_maps
+        else:
+            return logits

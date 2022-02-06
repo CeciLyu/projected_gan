@@ -366,5 +366,5 @@ class Self_Attn(nn.Module):
         
         y = self.gamma * o + x                          # Learnable gamma + residual
         y = self.activation(y)
-        print(y.shape)
-        return y
+
+        return y, beta

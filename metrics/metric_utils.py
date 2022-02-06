@@ -276,6 +276,9 @@ def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel
 
     # get detector
     detector = get_feature_detector(url=detector_url, device=opts.device, num_gpus=opts.num_gpus, rank=opts.rank, verbose=progress.verbose)
+    
+    dir = os.path.join('/home/suyuelyu/scratch/proteinGAN/gen_attn_map/',time.strftime("%m_%d_%H_%M_%S_", time.localtime()))
+    os.makedirs(dir)
 
     # Main loop.
     while not stats.is_full():
@@ -283,7 +286,11 @@ def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel
         for _i in range(batch_size // batch_gen):
             z = torch.randn([batch_gen, G.z_dim], device=opts.device)
             # img = G(z=z, c=next(c_iter), truncation_psi=0.1, **opts.G_kwargs)
-            img = G(z=z, c=next(c_iter), **opts.G_kwargs)
+            img, g_attn_map = G(z=z, c=next(c_iter), return_attn_map = True, **opts.G_kwargs)
+            
+            file_dir = os.path.join(dir, f'{_i}.pt')
+            torch.save(g_attn_map.detach().cpu(), file_dir)
+            
             img = (img * 127.5 + 128).clamp(0, 255).to(torch.uint8)
             images.append(img)
         images = torch.cat(images)
