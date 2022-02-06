@@ -172,11 +172,12 @@ class MultiScaleD(nn.Module):
         all_logits = []
         all_d_attn_maps = []
         for k, disc in self.mini_discs.items():
-            print(k)
-            print(disc.start_sz)
-            logits_d_attn_map = disc(features[k], c)
-            all_logits.append(logits_d_attn_map[0].view(features[k].size(0), -1))
-            all_d_attn_maps.append(logits_d_attn_map[1])
+            if hasattr(disc, 'main'):
+                all_logits.append(disc(features[k], c).view(features[k].size(0), -1))
+            else:
+                logits_d_attn_map = disc(features[k], c)
+                all_logits.append(logits_d_attn_map[0].view(features[k].size(0), -1))
+                all_d_attn_maps.append(logits_d_attn_map[1])
 
         all_logits = torch.cat(all_logits, dim=1)
         return all_logits, all_d_attn_maps
