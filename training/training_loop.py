@@ -272,6 +272,17 @@ def training_loop(
         progress_fn(cur_nimg // 1000, total_kimg)
     if hasattr(loss, 'pl_mean'):
         loss.pl_mean.copy_(__PL_MEAN__)
+
+    # initiate AMP scaler    
+    scaler_Gmain = torch.cuda.amp.GradScaler(enabled=True)
+    scaler_Dgen = torch.cuda.amp.GradScaler(enabled=True)
+    scaler_Dreal = torch.cuda.amp.GradScaler(enabled=True)
+    ['Gmain', 'Gboth']['Dmain', 'Dboth']
+
+    for phase in phases:
+        if phase.name == 'Gmain' or phase.name == 'Gboth' :
+
+
     while True:
 
         with torch.autograd.profiler.record_function('data_fetch'):
