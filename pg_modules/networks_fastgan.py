@@ -183,7 +183,7 @@ class Generator(nn.Module):
         self.w_dim = w_dim
         self.img_resolution = img_resolution
         self.img_channels = img_channels
-        self.attn_res = synthesis_kwargs[attn_res]
+        self.attn_res = synthesis_kwargs.attn_res
 
         # Mapping and Synthesis Networks
         self.mapping = DummyMapping()  # to fit the StyleGAN API
