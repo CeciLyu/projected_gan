@@ -58,10 +58,15 @@ class ProjectedGANLoss(Loss):
         if scaler is None:
             use_amp = False
             scaler_Gmain = torch.cuda.amp.GradScaler(enabled=use_amp)
-            scaler_Dgen
-            scaler_Dreal
+            scaler_Dgen = torch.cuda.amp.GradScaler(enabled=use_amp)
+            scaler_Dreal = torch.cuda.amp.GradScaler(enabled=use_amp)
         else:
             use_amp = True
+            if do_Gmain:
+                scaler_Gmain = scaler
+            if do_Dmain:
+                scaler_Dgen = scaler['scaler_Dgen']
+                scaler_Dreal = scaler['scaler_Dreal']
 
         if do_Gmain:
 

@@ -274,14 +274,12 @@ def training_loop(
         loss.pl_mean.copy_(__PL_MEAN__)
 
     # initiate AMP scaler    
-    scaler_Gmain = torch.cuda.amp.GradScaler(enabled=True)
-    scaler_Dgen = torch.cuda.amp.GradScaler(enabled=True)
-    scaler_Dreal = torch.cuda.amp.GradScaler(enabled=True)
-    ['Gmain', 'Gboth']['Dmain', 'Dboth']
-
     for phase in phases:
         if phase.name == 'Gmain' or phase.name == 'Gboth' :
-
+            phase.scaler = torch.cuda.amp.GradScaler(enabled=True)
+        if phase.name == 'Dmain' or phase.name == 'Dboth' :
+            phase.scaler = {'scaler_Dgen': torch.cuda.amp.GradScaler(enabled=True), 
+                            'scaler_Dreal': torch.cuda.amp.GradScaler(enabled=True)}
 
     while True:
 
@@ -310,7 +308,10 @@ def training_loop(
                 phase.module.feature_network.requires_grad_(False)
 
             for real_img, real_c, gen_z, gen_c in zip(phase_real_img, phase_real_c, phase_gen_z, phase_gen_c):
-                loss.accumulate_gradients(phase=phase.name, real_img=real_img, real_c=real_c, gen_z=gen_z, gen_c=gen_c, gain=phase.interval, cur_nimg=cur_nimg)
+                if phase.name in ['Gmain', 'Gboth', 'Dmain', 'Dboth']:
+                    loss.accumulate_gradients(phase=phase.name, real_img=real_img, real_c=real_c, gen_z=gen_z, gen_c=gen_c, gain=phase.interval, cur_nimg=cur_nimg, scaler = phase.scaler)
+                else:
+                    loss.accumulate_gradients(phase=phase.name, real_img=real_img, real_c=real_c, gen_z=gen_z, gen_c=gen_c, gain=phase.interval, cur_nimg=cur_nimg)
             phase.module.requires_grad_(False)
 
             # Update weights.
