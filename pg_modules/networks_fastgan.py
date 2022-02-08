@@ -183,6 +183,7 @@ class Generator(nn.Module):
         self.w_dim = w_dim
         self.img_resolution = img_resolution
         self.img_channels = img_channels
+        self.attn_res = synthesis_kwargs[attn_res]
 
         # Mapping and Synthesis Networks
         self.mapping = DummyMapping()  # to fit the StyleGAN API
@@ -193,7 +194,7 @@ class Generator(nn.Module):
         w = self.mapping(z, c)
         img, g_attn_map  = self.synthesis(w, c)
         #print(return_attn_map)
-        if return_attn_map:
+        if return_attn_map and not self.attn_res is None:
             return img, g_attn_map
         else: 
             return img
