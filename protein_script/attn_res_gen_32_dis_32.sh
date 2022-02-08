@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=attn_res_gen_32_dis_32
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=12:00:00         # adjust this to match the walltime of your job
+#SBATCH --time=00:05:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -28,7 +28,7 @@ pip install --no-index -r /scratch/suyuelyu/proteinGAN/projected_gan/requirement
 # unzipped the downloaded few-shot.zip and procced pokemon
 # python dataset_tool.py --source=/scratch/suyuelyu/proteinGAN/image-data/few-shot-images/pokemon \
 # --dest=/scratch/suyuelyu/proteinGAN/image-data/processed_few_shot_pokemon.zip --resolution=256x256 --transform=center-crop
-DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21
+DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21_pos_ecd
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 
@@ -44,4 +44,4 @@ python ${REPO_DIR}/train.py \
     --kimg=10000 \
     --d_attn_res=32 \
     --attn_res=32 \
-    --desc=res_gen_32_dis_32
+    --desc=res_gen_32_dis_32_pos_ecd
