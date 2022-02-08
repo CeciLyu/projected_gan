@@ -52,13 +52,15 @@ class SingleDisc(nn.Module):
             layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
             self.main = nn.Sequential(*layers)
         else:
-            if start_sz == self.d_attn_res:
-                        layers.append(Self_Attn(inChannels = nfc[start_sz]))
-                        layers_1_len = len(layers)
-            layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
-            start_sz = start_sz // 2
+            while start_sz > end_sz:
+                if start_sz == self.d_attn_res:
+                            layers.append(Self_Attn(inChannels = nfc[start_sz]))
+                            layers_1_len = len(layers)
+                layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
+                start_sz = start_sz // 2
 
             layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
+            
             if layers_1_len == 0 :
                 self.main = nn.Sequential(*layers)
             else:
