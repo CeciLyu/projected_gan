@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=dis_attn_res_32
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=00:05:00         # adjust this to match the walltime of your job
+#SBATCH --time=01:00:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
