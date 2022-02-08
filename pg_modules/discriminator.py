@@ -42,20 +42,23 @@ class SingleDisc(nn.Module):
 
         # Down Blocks
         DB = partial(DownBlockPatch, separable=separable) if patch else partial(DownBlock, separable=separable)
-        if start_sz >= self.d_attn_res: 
-            layers_1_len = 0
+        
+        layers_1_len = 0
+        if self.d_attn_res is None:
             while start_sz > end_sz:
-                if not self.d_attn_res is None:
-                    if start_sz == self.d_attn_res:
-                        layers.append(Self_Attn(inChannels = nfc[start_sz]))
-                        layers_1_len = len(layers)
-                        print(f"self.d_attn_res:{self.d_attn_res}")
-
                 layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
                 start_sz = start_sz // 2
+            
+            layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
+            self.main = nn.Sequential(*layers)
+        else:
+            if start_sz == self.d_attn_res:
+                        layers.append(Self_Attn(inChannels = nfc[start_sz]))
+                        layers_1_len = len(layers)
+            layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
+            start_sz = start_sz // 2
 
             layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
-
             if layers_1_len == 0 :
                 self.main = nn.Sequential(*layers)
             else:
@@ -63,15 +66,6 @@ class SingleDisc(nn.Module):
                 layers_2 = layers[layers_1_len:]
                 self.main_1 = nn.Sequential(*layers_1)
                 self.main_2 = nn.Sequential(*layers_2)
-
-        else:
-
-            while start_sz > end_sz:
-                layers.append(DB(nfc[start_sz],  nfc[start_sz//2]))
-                start_sz = start_sz // 2
-            
-            layers.append(conv2d(nfc[end_sz], 1, 4, 1, 0, bias=False))
-            self.main = nn.Sequential(*layers)
 
     def forward(self, x, c):
         if hasattr(self, 'main'):

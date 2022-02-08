@@ -92,7 +92,10 @@ class FastganSynthesis(nn.Module):
         if self.attn_res == 256:
             feat_last, g_attn_map = self.attn(feat_last)
 
-        return self.to_big(feat_last), g_attn_map
+        if self.attn_res is None:
+            return self.to_big(feat_last)
+        else:
+            return self.to_big(feat_last), g_attn_map
 
 
 # class FastganSynthesisCond(nn.Module):
