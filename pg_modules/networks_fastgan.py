@@ -58,7 +58,7 @@ class FastganSynthesis(nn.Module):
         if img_resolution > 512:
             self.feat_1024 = UpBlock(nfc[512], nfc[1024])
 
-    def forward(self, input, c, calc_loss = False, **kwargs):
+    def forward(self, input, c, return_attn_map = False, **kwargs):
         # map noise to hypersphere as in "Progressive Growing of GANS"
         input = normalize_second_moment(input[:, 0])
 
@@ -92,10 +92,10 @@ class FastganSynthesis(nn.Module):
         if self.attn_res == 256:
             feat_last, g_attn_map = self.attn(feat_last)
 
-        if self.attn_res is None or calc_loss:
-            return self.to_big(feat_last)
-        else:
+        if not self.attn_res is None and return_attn_map:
             return self.to_big(feat_last), g_attn_map
+        else:
+            return self.to_big(feat_last)
 
 
 # class FastganSynthesisCond(nn.Module):
@@ -195,8 +195,8 @@ class Generator(nn.Module):
         
         #print(return_attn_map)
         if return_attn_map and not self.attn_res is None:
-            img, g_attn_map  = self.synthesis(w, c)
+            img, g_attn_map  = self.synthesis(w, c, return_attn_map = return_attn_map)
             return img, g_attn_map
         else: 
-            img = self.synthesis(w, c)
+            img = self.synthesis(w, c, return_attn_map = return_attn_map)
             return img
