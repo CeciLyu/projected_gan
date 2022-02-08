@@ -260,7 +260,7 @@ def compute_feature_stats_for_dataset(opts, detector_url, detector_kwargs, rel_l
 
 #----------------------------------------------------------------------------
 
-def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel_lo=0, rel_hi=1, batch_size=64, batch_gen=None, swav=False, sfid=False, **stats_kwargs):
+def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel_lo=0, rel_hi=1, batch_size=64, batch_gen=None, swav=False, sfid=False, attn_res = None **stats_kwargs):
     if batch_gen is None:
         batch_gen = min(batch_size, 4)
     assert batch_size % batch_gen == 0
@@ -285,8 +285,11 @@ def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel
         images = []
         for _i in range(batch_size // batch_gen):
             z = torch.randn([batch_gen, G.z_dim], device=opts.device)
-            # img = G(z=z, c=next(c_iter), truncation_psi=0.1, **opts.G_kwargs)
-            img, g_attn_map = G(z=z, c=next(c_iter), return_attn_map = True, **opts.G_kwargs)
+            if attn_res is None:
+                img = G(z=z, c=next(c_iter), return_attn_map = False, **opts.G_kwargs)
+            else:
+                # img = G(z=z, c=next(c_iter), truncation_psi=0.1, **opts.G_kwargs)
+                img, g_attn_map = G(z=z, c=next(c_iter), return_attn_map = True, **opts.G_kwargs)
             
             file_dir = os.path.join(dir, f'{_i}.pt')
             torch.save(g_attn_map.detach().cpu(), file_dir)
