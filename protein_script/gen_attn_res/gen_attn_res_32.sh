@@ -32,7 +32,7 @@ DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21_pos_ecd
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 
-tensorboard --logdir=/scratch/suyuelyu/proteinGAN/tensorboard --host 0.0.0.0 --load_fast false &
+tensorboard --logdir=/home/suyuelyu/scratch/proteinGAN/pro_out/00014-fastgan_lite-pro_training_data_wo_X_21_pos_ecd-gpus1-batch64-gen_attn_res_32_pos_ecd/ --host 0.0.0.0 --load_fast false &
 python ${REPO_DIR}/train.py \
     --outdir=${OUTPUT_DIR} \
     --cfg=fastgan_lite \
