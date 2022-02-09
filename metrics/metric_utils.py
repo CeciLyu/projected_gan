@@ -278,8 +278,8 @@ def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel
     # get detector
     detector = get_feature_detector(url=detector_url, device=opts.device, num_gpus=opts.num_gpus, rank=opts.rank, verbose=progress.verbose)
     
-    dir = os.path.join('/home/suyuelyu/scratch/proteinGAN/gen_attn_map/',time.strftime("%m_%d_%H_%M_%S_", time.localtime()))
-    os.makedirs(dir)
+    # dir = os.path.join('/home/suyuelyu/scratch/proteinGAN/gen_attn_map/',time.strftime("%m_%d_%H_%M_%S_", time.localtime()))
+    # os.makedirs(dir)
 
     # Main loop.
     while not stats.is_full():
