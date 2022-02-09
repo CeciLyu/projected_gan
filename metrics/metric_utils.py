@@ -22,7 +22,7 @@ from tqdm import tqdm
 #----------------------------------------------------------------------------
 
 class MetricOptions:
-    def __init__(self, G=None, G_kwargs={}, dataset_kwargs={}, num_gpus=1, rank=0, device=None, progress=None, cache=True, run_dir=None, cur_nimg=None, snapshot_pkl=None):
+    def __init__(self, G=None, G_kwargs={}, dataset_kwargs={}, num_gpus=1, rank=0, device=None, progress=None, cache=True, run_dir=None, cur_nimg=None, snapshot_pkl=None, attn_res = None):
         assert 0 <= rank < num_gpus
         self.G              = G
         self.G_kwargs       = dnnlib.EasyDict(G_kwargs)
@@ -35,6 +35,7 @@ class MetricOptions:
         self.run_dir = run_dir
         self.cur_nimg = cur_nimg
         self.snapshot_pkl = snapshot_pkl
+        self.attn_res = attn_res
 
 #----------------------------------------------------------------------------
 

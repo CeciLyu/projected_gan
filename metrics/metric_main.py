@@ -34,7 +34,7 @@ def list_valid_metrics():
 
 #----------------------------------------------------------------------------
 
-def calc_metric(metric, **kwargs): # See metric_utils.MetricOptions for the full list of arguments.
+def calc_metric(metric, attn_res = None, **kwargs): # See metric_utils.MetricOptions for the full list of arguments.
     assert is_valid_metric(metric)
     opts = metric_utils.MetricOptions(**kwargs)
 
@@ -80,7 +80,7 @@ def report_metric(result_dict, run_dir=None, snapshot_pkl=None):
 @register_metric
 def fid50k_full(opts):
     opts.dataset_kwargs.update(max_size=None, xflip=False)
-    fid = frechet_inception_distance.compute_fid(opts, max_real=None, num_gen=50000)
+    fid = frechet_inception_distance.compute_fid(opts, max_real=None, num_gen=50000, attn_res= opts.attn_res)
     return dict(fid50k_full=fid)
 
 @register_metric
