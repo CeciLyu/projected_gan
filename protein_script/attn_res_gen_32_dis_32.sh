@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=attn_res_gen_32_dis_32
 #SBATCH --account=def-mikeuoft # adjust this to match the accounting group you are using to submit jobs
-#SBATCH --time=00:20:00         # adjust this to match the walltime of your job
+#SBATCH --time=01:30:00         # adjust this to match the walltime of your job
 #SBATCH --nodes=1      
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:a100:1           # You need to request one GPU to be able to run AlphaFold properly
@@ -32,6 +32,7 @@ DATA_DIR=/home/suyuelyu/scratch/proteinGAN/pro_training_data_wo_X_21_pos_ecd
 REPO_DIR=/scratch/suyuelyu/proteinGAN/projected_gan 
 OUTPUT_DIR=/scratch/suyuelyu/proteinGAN/pro_out
 
+tensorboard --logdir=/scratch/suyuelyu/proteinGAN/tensorboard --host 0.0.0.0 --load_fast false &
 python ${REPO_DIR}/train.py \
     --outdir=${OUTPUT_DIR} \
     --cfg=fastgan_lite \
