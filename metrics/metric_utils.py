@@ -292,8 +292,8 @@ def compute_feature_stats_for_generator(opts, detector_url, detector_kwargs, rel
                 # img = G(z=z, c=next(c_iter), truncation_psi=0.1, **opts.G_kwargs)
                 img, g_attn_map = G(z=z, c=next(c_iter), return_attn_map = True, **opts.G_kwargs)
             
-                file_dir = os.path.join(dir, f'{_i}.pt')
-                torch.save(g_attn_map.detach().cpu(), file_dir)
+                # file_dir = os.path.join(dir, f'{_i}.pt')
+                # torch.save(g_attn_map.detach().cpu(), file_dir)
             
             img = (img * 127.5 + 128).clamp(0, 255).to(torch.uint8)
             images.append(img)
