@@ -113,3 +113,6 @@ wcwidth==0.2.5
 webencodings==0.5.1+computecanada
 widgetsnbextension==3.5.1+computecanada
 zipp==3.5.0+computecanada
+tensorboard==2.6.0+computecanada
+tensorboard_data_server==0.6.1+computecanada
+tensorboard_plugin_wit==1.8.0+computecanada
