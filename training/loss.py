@@ -59,9 +59,13 @@ class ProjectedGANLoss(Loss):
             # Gmain: Maximize logits for generated images.
             with torch.autograd.profiler.record_function('Gmain_forward'):
                 gen_img = self.run_G(gen_z, gen_c) # [B,C,H,W] [64,3,256,256]
+                print('gen_img.shape')
+                print(gen_img.shape)
                 norm_gen_img = (gen_img + 1)/ 255
                 #sparse_loss_1 = torch.sum(torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))) / gen_img.size(0)
-                sparse_loss_1 = torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))
+                sparse_loss_1 = torch.log(norm_gen_img + 1e-12)
+                print('sparse_loss_1.shape')
+                print(sparse_loss_1.shape)
                 print('torch.sum(torch.isnan(sparse_loss_1))')
                 print(torch.sum(torch.isnan(sparse_loss_1)))
                 sparse_loss_2 = torch.abs(torch.mean(gen_img)-1297*255/256/256)
