@@ -62,6 +62,8 @@ class ProjectedGANLoss(Loss):
                 print('gen_img.shape')
                 print(gen_img.shape)
                 norm_gen_img = (gen_img + 1)/ 255
+                print('print(torch.sum(norm_gen_img <= 0))')
+                print(torch.sum(norm_gen_img <= 0))
                 #sparse_loss_1 = torch.sum(torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))) / gen_img.size(0)
                 sparse_loss_1 = torch.log(norm_gen_img + 1e-12)
                 print('sparse_loss_1.shape')
