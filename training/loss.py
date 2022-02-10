@@ -60,9 +60,8 @@ class ProjectedGANLoss(Loss):
             with torch.autograd.profiler.record_function('Gmain_forward'):
                 gen_img = self.run_G(gen_z, gen_c) # [B,C,H,W] [64,3,256,256]
                 norm_gen_img = (gen_img + 1)/ 255
-                print('torch.sum(torch.isnan(norm_gen_img))')
-                print(torch.sum(torch.isnan(norm_gen_img)))
-                sparse_loss_1 = torch.sum(torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))) # gen_img.size(0)
+                #sparse_loss_1 = torch.sum(torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))) / gen_img.size(0)
+                sparse_loss_1 = torch.mul(-1*norm_gen_img, torch.log(norm_gen_img + 1e-12))
                 print('torch.sum(torch.isnan(sparse_loss_1))')
                 print(torch.sum(torch.isnan(sparse_loss_1)))
                 sparse_loss_2 = torch.abs(torch.mean(gen_img)-1297*255/256/256)
