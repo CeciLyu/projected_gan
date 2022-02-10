@@ -358,6 +358,16 @@ class Self_Attn(nn.Module):
         h_x = self.value(x).view(batchsize, -1, N)      # Values                [B, C_bar, N]
 
         s =  torch.bmm(f_x.permute(0,2,1), g_x)         # Scores                [B, N, N]
+        
+        # add linear bias to attn_map: https://openreview.net/forum?id=R8sQPpGCv0
+        
+        bias = torch.zeros([32,32])
+        for i in range(32):
+            bias[i:, ].fill_diagonal_(-i)
+            bias[:,i:].fill_diagonal_(-i)
+        bias = 0.00390625 * bias                        # 0.00390625 = a * 2**(-(2)**(-math.log2(1) + 3))
+        bias = bias.view(1, 32*32)
+        
         beta = self.softmax(s)                          # Attention Map         [B, N, N]
 
         v = torch.bmm(h_x, beta)                        # Value x Softmax       [B, C_bar, N]
