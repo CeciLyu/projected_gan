@@ -44,4 +44,4 @@ python ${REPO_DIR}/train.py \
     --batch-gpu=64 \
     --kimg=10000 \
     --attn_res=32 \
-    --desc=gen_attn_res_32_spread_out_sparse
+    --desc=gen_attn_res_32_spread_out_sparse_1_1

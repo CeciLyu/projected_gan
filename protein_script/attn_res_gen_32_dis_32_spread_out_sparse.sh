@@ -45,4 +45,4 @@ python ${REPO_DIR}/train.py \
     --kimg=10000 \
     --d_attn_res=32 \
     --attn_res=32 \
-    --desc=res_gen_32_dis_32_spread_out_sparse
+    --desc=res_gen_32_dis_32_spread_out_sparse_1_1
