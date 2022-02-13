@@ -45,7 +45,7 @@ class ProjectedGANLoss(Loss):
         logits = self.D(img, c)
         return logits
 
-    def accumulate_gradients(self, phase, real_img, real_c, gen_z, gen_c, gain, cur_nimg):
+    def accumulate_gradients(self, phase, real_img, real_c, gen_z, gen_c, gain, cur_nimg, l_sparse_ratio):
         assert phase in ['Gmain', 'Greg', 'Gboth', 'Dmain', 'Dreg', 'Dboth']
         do_Gmain = (phase in ['Gmain', 'Gboth'])
         do_Dmain = (phase in ['Dmain', 'Dboth'])
@@ -66,7 +66,7 @@ class ProjectedGANLoss(Loss):
                 sparse_loss_1 = torch.mean(torch.mul(-1*norm_gen_img/255, torch.log(norm_gen_img/255 + 1e-12)))
                 # sparse_loss_2 = torch.mean(torch.abs(torch.sum(norm_gen_img)-1297*255*3))
                 #print(sparse_loss_1, sparse_loss_2)
-                loss_Gmain = (-gen_logits).mean() + 2 * sparse_loss_1 # + sparse_loss_2
+                loss_Gmain = (-gen_logits).mean() + l_sparse_ratio * sparse_loss_1 # + sparse_loss_2
 
                 # Logging
                 training_stats.report('Loss/scores/fake', gen_logits)

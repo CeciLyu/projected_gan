@@ -146,6 +146,7 @@ def parse_comma_separated_list(s):
 @click.option('--map-depth',    help='Mapping network depth  [default: varies]', metavar='INT', type=click.IntRange(min=1))
 @click.option('--attn_res',     help='attention layer resolution in generator', metavar='INT',  type=click.IntRange(min=8), default=None, show_default=True)
 @click.option('--d_attn_res',     help='attention layer resolution in discriminator', metavar='INT',  type=click.IntRange(min=8), default=None, show_default=True)
+@click.option('--l_sparse_ratio',help='sparse_loss_1_ratio', metavar='FLOAT',  type=click.FloatRange(min=0), default=1, show_default=True)
 
 # Misc settings.
 @click.option('--desc',         help='String to include in result dir name', metavar='STR',     type=str)
@@ -237,6 +238,7 @@ def main(**kwargs):
 
     # Projected and Multi-Scale Discriminators
     c.loss_kwargs = dnnlib.EasyDict(class_name='training.loss.ProjectedGANLoss')
+    c.loss_kwargs.l_sparse_ratio = opts.l_sparse_ratio
     c.D_kwargs = dnnlib.EasyDict(
         class_name='pg_modules.discriminator.ProjectedDiscriminator',
         diffaug=True,
