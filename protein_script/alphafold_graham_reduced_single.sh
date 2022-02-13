@@ -5,7 +5,6 @@ echo ${fasta_paths}
 # Run your commands
 # ,model_2,model_3,model_4,model_5
 
-DATA_DIR=$SCRATCH/proteinGAN/pro_out_seq   # Set the appropriate path to your supporting data
 REPO_DIR=$SCRATCH/alphafold # Set the appropriate path to AlphaFold's cloned repo
 DOWNLOAD_DIR=$SCRATCH/alphafold/reduced_data  # Set the appropriate path to your downloaded data
 
